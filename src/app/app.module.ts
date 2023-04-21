@@ -23,6 +23,7 @@ import { CombatWheelDialPipe } from './pipes/combat-wheel-dial.pipe';
 import {MatTooltipModule} from "@angular/material/tooltip";
 import { CombatWheelComponent } from './components/combat-wheel/combat-wheel.component';
 import { HomeComponent } from './components/home/home.component';
+import {CombatSpendingService} from "./services/combat-spending.service";
 
 @NgModule({
   declarations: [
@@ -52,7 +53,8 @@ import { HomeComponent } from './components/home/home.component';
   providers: [
     ThemesService,
     MatSnackBar,
-    FactionService
+    FactionService,
+    CombatSpendingService,
   ],
   bootstrap: [AppComponent]
 })

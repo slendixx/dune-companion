@@ -1,7 +1,6 @@
-export class CalculatorTroopRow{
+export class CommitedTroop {
   constructor(
     public hasSpiceSupport:boolean,
-    public commited:boolean,
     public isSpecialTroop:boolean,
   ) {}
 }

@@ -1,71 +1,71 @@
 <main class="max-w-sm w-full p-2 mx-auto sm:max-w-3xl">
-    <h1>Calculadora de plan de batalla avanzado</h1>
-  <p>Esta herramienta te ayudará a calcular el poder que tus tropas aportan a tu plan de batalla según las tropas que inviertas y la especia que les proveas.</p>
+  <h1>Calculadora de plan de batalla avanzado</h1>
+  <p>Esta herramienta te ayudará a calcular el poder que tus tropas aportan a tu plan de batalla según las tropas que
+    inviertas y la especia que les proveas.</p>
   <mat-divider/>
   <article class="w-full mx-auto flex flex-row justify-center mb-4">
     <div>
 
       <h2>Poder de las tropas invertidas</h2>
       <p>Cada tropa invertida suma poder a tu plan de batalla. Las tropas invertidas morirán si ganás el combate.</p>
-      <p>Utilizá los botones bajo {{faction.hasSpecialTroops ? "los íconos" : "el ícono"}} de tus guerreros para agregarlos o quitarlos a la lista de guerreros invertidos. Después podes marcar a cuales de tus guerreros les proveeras especia para potenciarlos en combate.</p>
+      <p>Utilizá los botones bajo {{faction.hasSpecialTroops ? "los íconos" : "el ícono"}} de tus guerreros para
+        agregarlos o quitarlos a la lista de guerreros invertidos. Después podes marcar a cuales de tus guerreros les
+        proveeras especia para potenciarlos en combate.</p>
       <p>Cuando termines, marcá en tu disco de combate lo que se indica en el diagrama.</p>
-  <app-combat-wheel [combatWheelDial]="combatWheelDial"
-  />
-  <div class="mt-2">
-  </div>
-<!--  <h3>Agregar o quitar a las tropas invertidas</h3>-->
-  <div class="w-full flex flex-row justify-evenly">
-    <app-troops-control
-      (add)="handleAddSpecialTroop()"
-      (remove)="handleRemoveSpecialTroop()"
-      *ngIf="faction.hasSpecialTroops"
-      [iconSrc]="faction.specialTroopIconSrc"
-    />
-    <app-troops-control
-      [iconSrc]="faction.troopIconSrc"
-      (add)="handleAddTroop()"
-      (remove)="handleRemoveTroop()"
-    />
-  </div>
-  <table class="w-full table-fixed table mb-2">
-    <thead>
-    <td
-      class="text-center font-medium text-lg pb-4"
-    >
-      Tropas Invertidas
-    </td>
-    <td class="text-center font-medium text-lg pb-4 ">Poder</td>
-    <td class="text-center font-medium text-lg pb-4 ">Especia</td>
-    </thead>
-    <tbody>
-      <tr
-        *ngFor="let troop of troops; let i = index"
-        class=""
-      >
-        <td class="flex flex-row justify-center">
-          <app-circle-icon
-            [iconSrc]="faction.hasSpecialTroops && troop.isSpecialTroop ? faction.specialTroopIconSrc : faction.troopIconSrc"
-          />
-        </td>
-        <td class="text-center font-bold text-2xl">
-          {{calculateTroopPower(troop) | fraction }}
-        </td>
+      <app-combat-wheel [combatWheelDial]="combatWheelDial"
+      />
+      <div class="mt-2">
+      </div>
+      <!--  <h3>Agregar o quitar a las tropas invertidas</h3>-->
+      <div class="w-full flex flex-row justify-evenly">
+        <app-troops-control
+          (add)="handleAddSpecialTroop()"
+          (remove)="handleRemoveSpecialTroop()"
+          *ngIf="faction.hasSpecialTroops"
+          [iconSrc]="faction.specialTroopIconSrc"
+        />
+        <app-troops-control
+          (add)="handleAddTroop()"
+          (remove)="handleRemoveTroop()"
+          [iconSrc]="faction.troopIconSrc"
+        />
+      </div>
+      <table class="w-full table-fixed table mb-2">
+        <thead>
+        <td class="text-center font-medium text-lg pb-4">Tropas Invertidas</td>
+        <td class="text-center font-medium text-lg pb-4 ">Poder</td>
+        <td class="text-center font-medium text-lg pb-4 ">Especia</td>
+        </thead>
+        <tbody>
+        <tr
+          *ngFor="let troop of (troops$ | async); let i = index"
+          class=""
+        >
+          <td class="flex flex-row justify-center">
+            <app-circle-icon
+              [iconSrc]="faction.hasSpecialTroops && troop.isSpecialTroop ? faction.specialTroopIconSrc : faction.troopIconSrc"
+            />
+          </td>
+          <td class="text-center font-bold text-2xl">
+            {{calculateTroopPower(troop) | fraction }}
+          </td>
 
-        <td class="flex flex-row justify-center" [class.grayscale]="!troop.hasSpiceSupport && faction.troopsRequireSpiceSupport">
-          <app-circle-icon
-            *ngIf="faction.troopsRequireSpiceSupport"
-            (click)="handleToggleSpiceSupport(i)"
-            [iconSrc]="'assets/images/spice.svg'"
-          />
-          <app-circle-icon
-            *ngIf="!faction.troopsRequireSpiceSupport"
-            (click)="handleToggleSpiceSupport(i)"
-            [iconSrc]="'assets/images/crossed-out-spice.svg'"
-          />
-        </td>
-      </tr>
-    </tbody>
-  </table>
+          <td [class.grayscale]="!troop.hasSpiceSupport && faction.troopsRequireSpiceSupport"
+              class="flex flex-row justify-center">
+            <app-circle-icon
+              (click)="handleToggleSpiceSupport(i)"
+              *ngIf="faction.troopsRequireSpiceSupport"
+              [iconSrc]="'assets/images/spice.svg'"
+            />
+            <app-circle-icon
+              (click)="handleToggleSpiceSupport(i)"
+              *ngIf="!faction.troopsRequireSpiceSupport"
+              [iconSrc]="'assets/images/crossed-out-spice.svg'"
+            />
+          </td>
+        </tr>
+        </tbody>
+      </table>
       <mat-divider class="mb-4"/>
       <h2>Cantidad de tropas invertidas y especia gastada</h2>
       <div class="flex flex-col items-center sm:flex-row sm:justify-between space-y-2">
@@ -73,64 +73,64 @@
           <thead
             *ngIf="!faction.hasSpecialTroops"
           >
-            <td
-              class="text-center font-medium text-md pb-4"
-            >
-              Tropas
-            </td>
-            <td
-              class="text-center font-medium text-md pb-4"
-            >
-              {{commitedTroops}}
-            </td>
+          <td
+            class="text-center font-medium text-md pb-4"
+          >
+            Tropas
+          </td>
+          <td
+            class="text-center font-medium text-md pb-4"
+          >
+            {{commitedTroopAmount$ | async}}
+          </td>
           </thead>
           <thead
             *ngIf="faction.hasSpecialTroops"
           >
-            <td
-              class="text-center font-medium text-md pb-4"
-            >
-              Normales
-            </td>
-            <td
-              class="text-center font-medium text-md pb-4"
-            >
-              Especiales
-            </td>
-            <td class="text-center font-medium text-md pb-4 ">
-              Total de Tropas
-            </td>
+          <td
+            class="text-center font-medium text-md pb-4"
+          >
+            Normales
+          </td>
+          <td
+            class="text-center font-medium text-md pb-4"
+          >
+            Especiales
+          </td>
+          <td class="text-center font-medium text-md pb-4 ">
+            Total de Tropas
+          </td>
           </thead>
           <tbody>
-            <tr *ngIf="faction.hasSpecialTroops">
-              <td class="text-center">
-                {{commitedTroops}}
-              </td>
-              <td
-                class="text-center"
-              >
-                {{commitedSpecialTroops}}
-              </td>
-              <td class="text-center">
-                {{commitedTroops + commitedSpecialTroops}}
-              </td>
-            </tr>
+          <tr *ngIf="faction.hasSpecialTroops">
+            <td class="text-center">
+              {{commitedTroopAmount$ | async}}
+            </td>
+            <td
+              class="text-center"
+            >
+              {{commitedSpecialTroopAmount$ | async}}
+            </td>
+            <td class="text-center">
+              {{totalCommitedSpecialTroopAmount$ | async}}
+            </td>
+          </tr>
           </tbody>
         </table>
-        <mat-divider class="mb-4 lg:none" />
-<!--        <mat-divider class="mb-4 hidden lg:block" vertical/>-->
-      <table class="w-full table-fixed table">
-        <thead>
-        <td
-          class="text-center font-medium text-md pb-4"
-        >
-          Especia
-        </td>
-        <td class="text-center font-medium text-md pb-4 ">
-        {{spiceSpent}}
-        </td>
-        </thead>
-      </table>
+        <mat-divider class="mb-4 lg:none"/>
+        <!--        <mat-divider class="mb-4 hidden lg:block" vertical/>-->
+        <table class="w-full table-fixed table">
+          <thead>
+          <td
+            class="text-center font-medium text-md pb-4"
+          >
+            Especia
+          </td>
+          <td class="text-center font-medium text-md pb-4 ">
+            {{spiceSpent$ | async}}
+          </td>
+          </thead>
+        </table>
       </div>
     </div>
   </article>

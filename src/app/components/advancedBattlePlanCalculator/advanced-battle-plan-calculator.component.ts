@@ -3,37 +3,50 @@ import {MatSnackBar} from "@angular/material/snack-bar";
 import {FactionService} from "../../services/faction.service";
 import {Faction} from "../../interfaces/faction";
 import {Observable} from "rxjs";
-import {CalculatorTroopRow} from "../classes/calculator-troop-row";
+import {CommitedTroop} from "../classes/commited-troop";
+import {CombatSpendingService} from "../../services/combat-spending.service";
+import {CombatWheelDialService} from "../../services/combat-wheel-dial.service";
 
 @Component({
   selector: 'app-plan-batalla-avanzado',
   templateUrl: './advanced-battle-plan-calculator.component.html',
   styleUrls: ['./advanced-battle-plan-calculator.component.scss']
 })
-export class AdvancedBattlePlanCalculator implements OnInit{
+export class AdvancedBattlePlanCalculator implements OnInit {
+  faction$!: Observable<Faction>;
+  faction!: Faction;
+  troops$!: Observable<CommitedTroop[]>;
+  troops: CommitedTroop[] = [];
+  spiceSpent$!: Observable<number>;
+  commitedTroopAmount$!: Observable<number>;
+  commitedSpecialTroopAmount$!: Observable<number>;
+  totalCommitedSpecialTroopAmount$!: Observable<number>;
+  combatWheelDial$!: Observable<number>;
+  combatWheelDial: number = 0;
+
+
   constructor(
     private snackBar: MatSnackBar,
     private factionService: FactionService,
+    private combatSpendingService: CombatSpendingService,
+    private combatWheelDialService: CombatWheelDialService,
   ) {
   }
-
-  faction$!: Observable<Faction>;
-  faction!: Faction;
-  troops: CalculatorTroopRow[] = [];
-  combatWheelDial: number = 0;
-  spiceSpent: number = 0;
-  commitedTroops: number = 0;
-  commitedSpecialTroops: number = 0;
 
   ngOnInit(): void {
     this.faction$ = this.factionService.getFaction();
     this.faction$.subscribe(
       value => this.faction = value
     );
-    this.updateWheelDial();
-    // this.snackBar.open(
-    //   `Poder: ${this.calculateBattleWheelDial()} - Especia Gastada: ${0}`
-    // );
+    this.troops$ = this.combatSpendingService.getCommitedTroops();
+    this.spiceSpent$ = this.combatSpendingService.getSpiceSpent();
+    this.commitedTroopAmount$ = this.combatSpendingService.getCommitedTroopAmount();
+    this.commitedSpecialTroopAmount$ = this.combatSpendingService.getCommitedSpecialTroopAmount();
+    this.totalCommitedSpecialTroopAmount$ = this.combatSpendingService.getTotalCommitedTroopAmount();
+
+    this.combatWheelDialService.getCombatWheelDial().subscribe(
+      value => this.combatWheelDial = value
+    )
   }
 
   openSnackBar(message: string) {
@@ -42,103 +55,37 @@ export class AdvancedBattlePlanCalculator implements OnInit{
 
 
   handleAddTroop() {
-    this.troops.unshift(new CalculatorTroopRow(
-      false,
-      true,
-      false,
-    ));
-    this.updateWheelDial();
-    this.updateCommitedTroops();
+    this.combatSpendingService.addTroop();
+    // this.updateWheelDial();
   }
+
   handleRemoveTroop() {
-    const nonSpecialTroops = this.troops.filter(
-      troop => !troop.isSpecialTroop
-    );
-    if(nonSpecialTroops.length === 0)
-      return;
-
-    const removeIndex = nonSpecialTroops.length - 1;
-    this.troops = this.troops.filter((value, i) => i !==removeIndex);
-
-    this.updateWheelDial();
-    this.updateCommitedTroops();
+    this.combatSpendingService.removeTroop()
   }
+
   handleAddSpecialTroop() {
-    this.troops.push(new CalculatorTroopRow(
-      false,
-      true,
-      true,
-    ));
-
-    this.updateWheelDial();
-    this.updateCommitedTroops();
+    this.combatSpendingService.addSpecialTroop();
   }
+
   handleRemoveSpecialTroop() {
-    const nonSpecialTroops = this.troops.filter(
-      troop => !troop.isSpecialTroop
-    );
-    const specialTroops = this.troops.filter(
-      troop => troop.isSpecialTroop
-    );
-    if(specialTroops.length === 0)
-      return;
-
-    const removeIndex = nonSpecialTroops.length + (specialTroops.length - 1);
-    this.troops = this.troops.filter((value, i) => i !==removeIndex);
-
-    this.updateWheelDial();
-    this.updateCommitedTroops();
+    this.combatSpendingService.removeSpecialTroop();
   }
 
-  updateWheelDial(){
-    this.combatWheelDial = this.calculateBattleWheelDial();
-  }
-  calculateTroopPower(troop: CalculatorTroopRow): number {
-    if(!this.faction.troopsRequireSpiceSupport){
+  //TODO refactor duplication of this method
+  calculateTroopPower(troop: CommitedTroop): number {
+    if (!this.faction.troopsRequireSpiceSupport) {
       return troop.isSpecialTroop ? 2 : 1;
     }
 
-    if(troop.isSpecialTroop)
+    if (troop.isSpecialTroop)
       return troop.hasSpiceSupport ? 2 : 1;
     else
       return troop.hasSpiceSupport ? 1 : 0.5;
   }
-  updateCommitedTroops(){
-      this.commitedTroops = this.calculateCommitedTroops();
-    this.commitedSpecialTroops = this.calculateCommitedSpecialTroops();
-  }
-  private updateSpiceSpent() {
-    this.spiceSpent = this.calculateSpiceSpent();
-  }
-  calculateCommitedTroops(){
-    return this.troops
-      .filter(troop => !troop.isSpecialTroop)
-      .length;
-  }
-  calculateCommitedSpecialTroops(){
-    return this.troops
-      .filter(troop => troop.isSpecialTroop)
-      .length;
-  }
-  calculateSpiceSpent(){
-    return this.troops
-      .filter(troop => troop.hasSpiceSupport)
-      .length;
-  }
+
 
   handleToggleSpiceSupport(clickedIndex: number) {
-    this.troops.forEach((troop,index) => {
-      if(index === clickedIndex)
-        troop.hasSpiceSupport = !troop.hasSpiceSupport;
-    })
-    this.combatWheelDial = this.calculateBattleWheelDial();
-    this.updateSpiceSpent();
-  }
-  calculateBattleWheelDial():number {
-    return this.troops.reduce(
-      (previousValue,currentValue)=>{
-        return previousValue + this.calculateTroopPower(currentValue);
-      }, 0);
+    this.combatSpendingService.toggleSpiceSupport(clickedIndex);
   }
 
 }
