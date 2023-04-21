@@ -3,51 +3,63 @@ lockfileVersion: 5.4
 specifiers:
   '@angular-devkit/build-angular': ^15.2.4
   '@angular/animations': ^15.2.0
+  '@angular/cdk': 15.2.7
   '@angular/cli': ~15.2.4
   '@angular/common': ^15.2.0
   '@angular/compiler': ^15.2.0
   '@angular/compiler-cli': ^15.2.0
   '@angular/core': ^15.2.0
   '@angular/forms': ^15.2.0
+  '@angular/material': 15.2.7
   '@angular/platform-browser': ^15.2.0
   '@angular/platform-browser-dynamic': ^15.2.0
   '@angular/router': ^15.2.0
   '@types/jasmine': ~4.3.0
+  autoprefixer: ^10.4.14
+  fraction.js: ^4.2.0
   jasmine-core: ~4.5.0
   karma: ~6.4.0
   karma-chrome-launcher: ~3.1.0
   karma-coverage: ~2.2.0
   karma-jasmine: ~5.1.0
   karma-jasmine-html-reporter: ~2.0.0
+  postcss: ^8.4.22
   rxjs: ~7.8.0
+  tailwindcss: ^3.3.1
   tslib: ^2.3.0
   typescript: ~4.9.4
   zone.js: ~0.12.0
 
 dependencies:
   '@angular/animations': 15.2.7_@angular+core@15.2.7
+  '@angular/cdk': 15.2.7_qkwqd2x6zboxsr7cxbihicfydq
   '@angular/common': 15.2.7_ao6sczskin77nwh324zvc5uqou
   '@angular/compiler': 15.2.7_@angular+core@15.2.7
   '@angular/core': 15.2.7_rxjs@7.8.0+zone.js@0.12.0
   '@angular/forms': 15.2.7_rieowl7gu2fxim2zribardvuna
+  '@angular/material': 15.2.7_6wdb3v4aznstfutde5muebhiki
   '@angular/platform-browser': 15.2.7_5iyclyhtx2576p6oziktkmq2pu
   '@angular/platform-browser-dynamic': 15.2.7_tk3jey6i6etx35tf27xkk432re
   '@angular/router': 15.2.7_rieowl7gu2fxim2zribardvuna
+  fraction.js: 4.2.0
   rxjs: 7.8.0
   tslib: 2.5.0
   zone.js: 0.12.0
 
 devDependencies:
-  '@angular-devkit/build-angular': 15.2.6_fvg7lohudjrohphriw4noroox4
+  '@angular-devkit/build-angular': 15.2.6_7clut4cw6t73qszfh3xe2x7rwy
   '@angular/cli': 15.2.6
   '@angular/compiler-cli': 15.2.7_auyd34vdqbba5s3wum3lmsn2xy
   '@types/jasmine': 4.3.1
+  autoprefixer: 10.4.14_postcss@8.4.22
   jasmine-core: 4.5.0
   karma: 6.4.1
   karma-chrome-launcher: 3.1.1
   karma-coverage: 2.2.0
   karma-jasmine: 5.1.0_karma@6.4.1
   karma-jasmine-html-reporter: 2.0.0_uk6l45dlsjldsnfgnal4othgyq
+  postcss: 8.4.22
+  tailwindcss: 3.3.1_postcss@8.4.22
   typescript: 4.9.5
 
 packages:
@@ -88,7 +100,7 @@ packages:
       - chokidar
     dev: true
 
-  /@angular-devkit/build-angular/15.2.6_fvg7lohudjrohphriw4noroox4:
+  /@angular-devkit/build-angular/15.2.6_7clut4cw6t73qszfh3xe2x7rwy:
     resolution: {integrity: sha512-OmMcdXXUrAdZNxwxDE8SUx1FMcq9FyMnrSv1PmP9sHPBoxAdBVc/qNdGA9V7C5yHvWHGgzsx7ZK5TDuvifzS5g==}
     engines: {node: ^14.20.0 || ^16.13.0 || >=18.10.0, npm: ^6.11.0 || ^7.5.6 || >=8.0.0, yarn: '>= 1.13.0'}
     peerDependencies:
@@ -170,6 +182,7 @@ packages:
       semver: 7.3.8
       source-map-loader: 4.0.1_webpack@5.76.1
       source-map-support: 0.5.21
+      tailwindcss: 3.3.1_postcss@8.4.22
       terser: 5.16.3
       text-table: 0.2.0
       tree-kill: 1.2.2
@@ -266,6 +279,21 @@ packages:
     dependencies:
       '@angular/core': 15.2.7_rxjs@7.8.0+zone.js@0.12.0
       tslib: 2.5.0
+    dev: false
+
+  /@angular/cdk/15.2.7_qkwqd2x6zboxsr7cxbihicfydq:
+    resolution: {integrity: sha512-IQg/EuZ3LC/vOHZtcLvkM+FSACXW5PVv2NddJgsBOtfcf1HcTk97VhegtB4WGQTUe1pcxiLGz/aWYuIRknjitw==}
+    peerDependencies:
+      '@angular/common': ^15.0.0 || ^16.0.0
+      '@angular/core': ^15.0.0 || ^16.0.0
+      rxjs: ^6.5.3 || ^7.4.0
+    dependencies:
+      '@angular/common': 15.2.7_ao6sczskin77nwh324zvc5uqou
+      '@angular/core': 15.2.7_rxjs@7.8.0+zone.js@0.12.0
+      rxjs: 7.8.0
+      tslib: 2.5.0
+    optionalDependencies:
+      parse5: 7.1.2
     dev: false
 
   /@angular/cli/15.2.6:
@@ -368,6 +396,74 @@ packages:
       '@angular/common': 15.2.7_ao6sczskin77nwh324zvc5uqou
       '@angular/core': 15.2.7_rxjs@7.8.0+zone.js@0.12.0
       '@angular/platform-browser': 15.2.7_5iyclyhtx2576p6oziktkmq2pu
+      rxjs: 7.8.0
+      tslib: 2.5.0
+    dev: false
+
+  /@angular/material/15.2.7_6wdb3v4aznstfutde5muebhiki:
+    resolution: {integrity: sha512-M/ca/UJLaneiHhXKGfp4ZboK7ebVYjJ78CNyOZNi1ZPvDryeD0pcT1yDXL5UfuWzHrikJ1R5SOUN51HaaBRdWw==}
+    peerDependencies:
+      '@angular/animations': ^15.0.0 || ^16.0.0
+      '@angular/cdk': 15.2.7
+      '@angular/common': ^15.0.0 || ^16.0.0
+      '@angular/core': ^15.0.0 || ^16.0.0
+      '@angular/forms': ^15.0.0 || ^16.0.0
+      '@angular/platform-browser': ^15.0.0 || ^16.0.0
+      rxjs: ^6.5.3 || ^7.4.0
+    dependencies:
+      '@angular/animations': 15.2.7_@angular+core@15.2.7
+      '@angular/cdk': 15.2.7_qkwqd2x6zboxsr7cxbihicfydq
+      '@angular/common': 15.2.7_ao6sczskin77nwh324zvc5uqou
+      '@angular/core': 15.2.7_rxjs@7.8.0+zone.js@0.12.0
+      '@angular/forms': 15.2.7_rieowl7gu2fxim2zribardvuna
+      '@angular/platform-browser': 15.2.7_5iyclyhtx2576p6oziktkmq2pu
+      '@material/animation': 15.0.0-canary.684e33d25.0
+      '@material/auto-init': 15.0.0-canary.684e33d25.0
+      '@material/banner': 15.0.0-canary.684e33d25.0
+      '@material/base': 15.0.0-canary.684e33d25.0
+      '@material/button': 15.0.0-canary.684e33d25.0
+      '@material/card': 15.0.0-canary.684e33d25.0
+      '@material/checkbox': 15.0.0-canary.684e33d25.0
+      '@material/chips': 15.0.0-canary.684e33d25.0
+      '@material/circular-progress': 15.0.0-canary.684e33d25.0
+      '@material/data-table': 15.0.0-canary.684e33d25.0
+      '@material/density': 15.0.0-canary.684e33d25.0
+      '@material/dialog': 15.0.0-canary.684e33d25.0
+      '@material/dom': 15.0.0-canary.684e33d25.0
+      '@material/drawer': 15.0.0-canary.684e33d25.0
+      '@material/elevation': 15.0.0-canary.684e33d25.0
+      '@material/fab': 15.0.0-canary.684e33d25.0
+      '@material/feature-targeting': 15.0.0-canary.684e33d25.0
+      '@material/floating-label': 15.0.0-canary.684e33d25.0
+      '@material/form-field': 15.0.0-canary.684e33d25.0
+      '@material/icon-button': 15.0.0-canary.684e33d25.0
+      '@material/image-list': 15.0.0-canary.684e33d25.0
+      '@material/layout-grid': 15.0.0-canary.684e33d25.0
+      '@material/line-ripple': 15.0.0-canary.684e33d25.0
+      '@material/linear-progress': 15.0.0-canary.684e33d25.0
+      '@material/list': 15.0.0-canary.684e33d25.0
+      '@material/menu': 15.0.0-canary.684e33d25.0
+      '@material/menu-surface': 15.0.0-canary.684e33d25.0
+      '@material/notched-outline': 15.0.0-canary.684e33d25.0
+      '@material/radio': 15.0.0-canary.684e33d25.0
+      '@material/ripple': 15.0.0-canary.684e33d25.0
+      '@material/rtl': 15.0.0-canary.684e33d25.0
+      '@material/segmented-button': 15.0.0-canary.684e33d25.0
+      '@material/select': 15.0.0-canary.684e33d25.0
+      '@material/shape': 15.0.0-canary.684e33d25.0
+      '@material/slider': 15.0.0-canary.684e33d25.0
+      '@material/snackbar': 15.0.0-canary.684e33d25.0
+      '@material/switch': 15.0.0-canary.684e33d25.0
+      '@material/tab': 15.0.0-canary.684e33d25.0
+      '@material/tab-bar': 15.0.0-canary.684e33d25.0
+      '@material/tab-indicator': 15.0.0-canary.684e33d25.0
+      '@material/tab-scroller': 15.0.0-canary.684e33d25.0
+      '@material/textfield': 15.0.0-canary.684e33d25.0
+      '@material/theme': 15.0.0-canary.684e33d25.0
+      '@material/tooltip': 15.0.0-canary.684e33d25.0
+      '@material/top-app-bar': 15.0.0-canary.684e33d25.0
+      '@material/touch-target': 15.0.0-canary.684e33d25.0
+      '@material/typography': 15.0.0-canary.684e33d25.0
       rxjs: 7.8.0
       tslib: 2.5.0
     dev: false
@@ -1952,6 +2048,657 @@ packages:
     resolution: {integrity: sha512-Hcv+nVC0kZnQ3tD9GVu5xSMR4VVYOteQIr/hwFPVEvPdlXqgGEuRjiheChHgdM+JyqdgNcmzZOX/tnl0JOiI7A==}
     dev: true
 
+  /@material/animation/15.0.0-canary.684e33d25.0:
+    resolution: {integrity: sha512-5osi1z4JQIXcklPALbH/zTfOm2pDzHt9Fxm7ZyURy250xIZj6QjULRzPTnzOhC2ropfix9ra2Cfggbf0dcRbEQ==}
+    dependencies:
+      tslib: 2.5.0
+    dev: false
+
+  /@material/auto-init/15.0.0-canary.684e33d25.0:
+    resolution: {integrity: sha512-OigQTmrVzkcGvxNjOaIe5oItTFPgrO9xLewvharDI6m6yvO1z7OBnkcW+sFN6ggLNYNxd0O1u9v64vMsmeDABQ==}
+    dependencies:
+      '@material/base': 15.0.0-canary.684e33d25.0
+      tslib: 2.5.0
+    dev: false
+
+  /@material/banner/15.0.0-canary.684e33d25.0:
+    resolution: {integrity: sha512-PqtGp3KWzdu58rWv/DIvSfe38m5YKOBbAAbBinSvgadBb/da+IE1t5F7YPNKE1T5lJsQBGVUYx6QBIeXm+aI/A==}
+    dependencies:
+      '@material/base': 15.0.0-canary.684e33d25.0
+      '@material/button': 15.0.0-canary.684e33d25.0
+      '@material/dom': 15.0.0-canary.684e33d25.0
+      '@material/elevation': 15.0.0-canary.684e33d25.0
+      '@material/feature-targeting': 15.0.0-canary.684e33d25.0
+      '@material/ripple': 15.0.0-canary.684e33d25.0
+      '@material/rtl': 15.0.0-canary.684e33d25.0
+      '@material/shape': 15.0.0-canary.684e33d25.0
+      '@material/theme': 15.0.0-canary.684e33d25.0
+      '@material/tokens': 15.0.0-canary.684e33d25.0
+      '@material/typography': 15.0.0-canary.684e33d25.0
+      tslib: 2.5.0
+    dev: false
+
+  /@material/base/15.0.0-canary.684e33d25.0:
+    resolution: {integrity: sha512-oOaqb/SfjWwTKsdJUZmeh/Qrs41nIJI0N+zELsxnvbGjSIN1ZMAKYZFPMahqvC68OJ6+5CvJM8PoTNs5l+B8IQ==}
+    dependencies:
+      tslib: 2.5.0
+    dev: false
+
+  /@material/button/15.0.0-canary.684e33d25.0:
+    resolution: {integrity: sha512-Nkekk4edeX+ObVOa7UlwavaHdmckPV5wU4SAJf3iA3R61cmz+KsgAgpzfcwv5WfNhIlc2nLu8QYEecpHdo9d/w==}
+    dependencies:
+      '@material/density': 15.0.0-canary.684e33d25.0
+      '@material/dom': 15.0.0-canary.684e33d25.0
+      '@material/elevation': 15.0.0-canary.684e33d25.0
+      '@material/feature-targeting': 15.0.0-canary.684e33d25.0
+      '@material/focus-ring': 15.0.0-canary.684e33d25.0
+      '@material/ripple': 15.0.0-canary.684e33d25.0
+      '@material/rtl': 15.0.0-canary.684e33d25.0
+      '@material/shape': 15.0.0-canary.684e33d25.0
+      '@material/theme': 15.0.0-canary.684e33d25.0
+      '@material/tokens': 15.0.0-canary.684e33d25.0
+      '@material/touch-target': 15.0.0-canary.684e33d25.0
+      '@material/typography': 15.0.0-canary.684e33d25.0
+      tslib: 2.5.0
+    dev: false
+
+  /@material/card/15.0.0-canary.684e33d25.0:
+    resolution: {integrity: sha512-xhyB7XX5KkEiCEqwSPkl58ZGYL6xFdnY62zimyBXJRG/Eaa0Swj3kW20hVCpt4f7c9Zmp8Se27rg8vnKmhvO3g==}
+    dependencies:
+      '@material/dom': 15.0.0-canary.684e33d25.0
+      '@material/elevation': 15.0.0-canary.684e33d25.0
+      '@material/feature-targeting': 15.0.0-canary.684e33d25.0
+      '@material/ripple': 15.0.0-canary.684e33d25.0
+      '@material/rtl': 15.0.0-canary.684e33d25.0
+      '@material/shape': 15.0.0-canary.684e33d25.0
+      '@material/theme': 15.0.0-canary.684e33d25.0
+      '@material/tokens': 15.0.0-canary.684e33d25.0
+      tslib: 2.5.0
+    dev: false
+
+  /@material/checkbox/15.0.0-canary.684e33d25.0:
+    resolution: {integrity: sha512-NFpM3TS924PmVsk2KQLNU95OYCf8ZwYgzeqfnAexU0bEfjUJXINBun2Go0AaeOUMjuvWUe+byjrXgv8SFYbMUA==}
+    dependencies:
+      '@material/animation': 15.0.0-canary.684e33d25.0
+      '@material/base': 15.0.0-canary.684e33d25.0
+      '@material/density': 15.0.0-canary.684e33d25.0
+      '@material/dom': 15.0.0-canary.684e33d25.0
+      '@material/feature-targeting': 15.0.0-canary.684e33d25.0
+      '@material/focus-ring': 15.0.0-canary.684e33d25.0
+      '@material/ripple': 15.0.0-canary.684e33d25.0
+      '@material/theme': 15.0.0-canary.684e33d25.0
+      '@material/touch-target': 15.0.0-canary.684e33d25.0
+      tslib: 2.5.0
+    dev: false
+
+  /@material/chips/15.0.0-canary.684e33d25.0:
+    resolution: {integrity: sha512-z4ajQ4NnsAQ/Si9tZ4xmxzjj2Qb+vW++4QjCjjjwAGIZbCe0xglAnMh2t66XLJUxt7RoKZuZVEO7ZqcFZpvJFQ==}
+    dependencies:
+      '@material/animation': 15.0.0-canary.684e33d25.0
+      '@material/base': 15.0.0-canary.684e33d25.0
+      '@material/checkbox': 15.0.0-canary.684e33d25.0
+      '@material/density': 15.0.0-canary.684e33d25.0
+      '@material/dom': 15.0.0-canary.684e33d25.0
+      '@material/elevation': 15.0.0-canary.684e33d25.0
+      '@material/feature-targeting': 15.0.0-canary.684e33d25.0
+      '@material/focus-ring': 15.0.0-canary.684e33d25.0
+      '@material/ripple': 15.0.0-canary.684e33d25.0
+      '@material/rtl': 15.0.0-canary.684e33d25.0
+      '@material/shape': 15.0.0-canary.684e33d25.0
+      '@material/theme': 15.0.0-canary.684e33d25.0
+      '@material/tokens': 15.0.0-canary.684e33d25.0
+      '@material/touch-target': 15.0.0-canary.684e33d25.0
+      '@material/typography': 15.0.0-canary.684e33d25.0
+      safevalues: 0.3.4
+      tslib: 2.5.0
+    dev: false
+
+  /@material/circular-progress/15.0.0-canary.684e33d25.0:
+    resolution: {integrity: sha512-G6qD0nGNtEUwWnAMJuA9INYFpZoKtx7KFjBaPF4Ol2YLHtmShALNAYyn54TMAK8AZ2IpW08PXjGS7Ye88vrdEQ==}
+    dependencies:
+      '@material/animation': 15.0.0-canary.684e33d25.0
+      '@material/base': 15.0.0-canary.684e33d25.0
+      '@material/dom': 15.0.0-canary.684e33d25.0
+      '@material/feature-targeting': 15.0.0-canary.684e33d25.0
+      '@material/progress-indicator': 15.0.0-canary.684e33d25.0
+      '@material/rtl': 15.0.0-canary.684e33d25.0
+      '@material/theme': 15.0.0-canary.684e33d25.0
+      tslib: 2.5.0
+    dev: false
+
+  /@material/data-table/15.0.0-canary.684e33d25.0:
+    resolution: {integrity: sha512-+wDw1DDDFfAsKAMzs84f/5GCjux39zjNfW8tL4wFbkWNwewmQrG9zaQMJhBpVOtLCrM8Gj6SOgOANqgqoCjvGg==}
+    dependencies:
+      '@material/animation': 15.0.0-canary.684e33d25.0
+      '@material/base': 15.0.0-canary.684e33d25.0
+      '@material/checkbox': 15.0.0-canary.684e33d25.0
+      '@material/density': 15.0.0-canary.684e33d25.0
+      '@material/dom': 15.0.0-canary.684e33d25.0
+      '@material/elevation': 15.0.0-canary.684e33d25.0
+      '@material/feature-targeting': 15.0.0-canary.684e33d25.0
+      '@material/icon-button': 15.0.0-canary.684e33d25.0
+      '@material/linear-progress': 15.0.0-canary.684e33d25.0
+      '@material/list': 15.0.0-canary.684e33d25.0
+      '@material/menu': 15.0.0-canary.684e33d25.0
+      '@material/rtl': 15.0.0-canary.684e33d25.0
+      '@material/select': 15.0.0-canary.684e33d25.0
+      '@material/shape': 15.0.0-canary.684e33d25.0
+      '@material/theme': 15.0.0-canary.684e33d25.0
+      '@material/tokens': 15.0.0-canary.684e33d25.0
+      '@material/touch-target': 15.0.0-canary.684e33d25.0
+      '@material/typography': 15.0.0-canary.684e33d25.0
+      tslib: 2.5.0
+    dev: false
+
+  /@material/density/15.0.0-canary.684e33d25.0:
+    resolution: {integrity: sha512-661yEVRMGrlq6S6WuSbPRO+ZwpdUOg2glCc7y96doM6itSLOa3UEAldjOLfsYZVB74GnKCiuDp//QmfoRyYTfA==}
+    dependencies:
+      tslib: 2.5.0
+    dev: false
+
+  /@material/dialog/15.0.0-canary.684e33d25.0:
+    resolution: {integrity: sha512-szn0dHnfeQTSOC6SSRSGAzX6Tnx+4NnSMUwNkXm+3bwjds8ZVK26+DXwLrP5f3ID5F1K5sFsRf2INo5/TNTHyQ==}
+    dependencies:
+      '@material/animation': 15.0.0-canary.684e33d25.0
+      '@material/base': 15.0.0-canary.684e33d25.0
+      '@material/button': 15.0.0-canary.684e33d25.0
+      '@material/dom': 15.0.0-canary.684e33d25.0
+      '@material/elevation': 15.0.0-canary.684e33d25.0
+      '@material/feature-targeting': 15.0.0-canary.684e33d25.0
+      '@material/icon-button': 15.0.0-canary.684e33d25.0
+      '@material/ripple': 15.0.0-canary.684e33d25.0
+      '@material/rtl': 15.0.0-canary.684e33d25.0
+      '@material/shape': 15.0.0-canary.684e33d25.0
+      '@material/theme': 15.0.0-canary.684e33d25.0
+      '@material/tokens': 15.0.0-canary.684e33d25.0
+      '@material/touch-target': 15.0.0-canary.684e33d25.0
+      '@material/typography': 15.0.0-canary.684e33d25.0
+      tslib: 2.5.0
+    dev: false
+
+  /@material/dom/15.0.0-canary.684e33d25.0:
+    resolution: {integrity: sha512-7pEJLYov+tGgfuD8mZxoVU6rWtPI8ppjTAhz+F27Hz9FG0JETMWTKpDPBXLnKvX7vhIxL83GvZ9geNHCe8Hfog==}
+    dependencies:
+      '@material/feature-targeting': 15.0.0-canary.684e33d25.0
+      '@material/rtl': 15.0.0-canary.684e33d25.0
+      tslib: 2.5.0
+    dev: false
+
+  /@material/drawer/15.0.0-canary.684e33d25.0:
+    resolution: {integrity: sha512-/KMckLf1PYU/H3PXnS4e0aFl03qG3JlSv4LGgX6juJufcONqGTl/m63EMO/L/eUy6H1CRrXmVDjik/jzHLyDhg==}
+    dependencies:
+      '@material/animation': 15.0.0-canary.684e33d25.0
+      '@material/base': 15.0.0-canary.684e33d25.0
+      '@material/dom': 15.0.0-canary.684e33d25.0
+      '@material/elevation': 15.0.0-canary.684e33d25.0
+      '@material/feature-targeting': 15.0.0-canary.684e33d25.0
+      '@material/list': 15.0.0-canary.684e33d25.0
+      '@material/ripple': 15.0.0-canary.684e33d25.0
+      '@material/rtl': 15.0.0-canary.684e33d25.0
+      '@material/shape': 15.0.0-canary.684e33d25.0
+      '@material/theme': 15.0.0-canary.684e33d25.0
+      '@material/typography': 15.0.0-canary.684e33d25.0
+      tslib: 2.5.0
+    dev: false
+
+  /@material/elevation/15.0.0-canary.684e33d25.0:
+    resolution: {integrity: sha512-WDF8SsRtq3rXUbVVbd9K4DUijIPH0bUFSOreVYxudpuxAfTlDS5+aeS1EK9UIBFYLuba4u5wVT2tDv6e1RTfrQ==}
+    dependencies:
+      '@material/animation': 15.0.0-canary.684e33d25.0
+      '@material/base': 15.0.0-canary.684e33d25.0
+      '@material/feature-targeting': 15.0.0-canary.684e33d25.0
+      '@material/rtl': 15.0.0-canary.684e33d25.0
+      '@material/theme': 15.0.0-canary.684e33d25.0
+      tslib: 2.5.0
+    dev: false
+
+  /@material/fab/15.0.0-canary.684e33d25.0:
+    resolution: {integrity: sha512-KCu87rWOKEAe9vZcAm6K8XazYSWPNjMG+OhrbPjHW6bCO7as1YCgtmkBkhff7csY/rFmcVpIy884xtUfLmSudQ==}
+    dependencies:
+      '@material/animation': 15.0.0-canary.684e33d25.0
+      '@material/dom': 15.0.0-canary.684e33d25.0
+      '@material/elevation': 15.0.0-canary.684e33d25.0
+      '@material/feature-targeting': 15.0.0-canary.684e33d25.0
+      '@material/focus-ring': 15.0.0-canary.684e33d25.0
+      '@material/ripple': 15.0.0-canary.684e33d25.0
+      '@material/rtl': 15.0.0-canary.684e33d25.0
+      '@material/shape': 15.0.0-canary.684e33d25.0
+      '@material/theme': 15.0.0-canary.684e33d25.0
+      '@material/tokens': 15.0.0-canary.684e33d25.0
+      '@material/touch-target': 15.0.0-canary.684e33d25.0
+      '@material/typography': 15.0.0-canary.684e33d25.0
+      tslib: 2.5.0
+    dev: false
+
+  /@material/feature-targeting/15.0.0-canary.684e33d25.0:
+    resolution: {integrity: sha512-HyH1erNTSjS63sigNSUMaCd0nJhTNdDFeC+myrxwtDaQm+uYJ8troCNtQM3g6mx0XATNtX5aTOoPmrM6yVVi1A==}
+    dependencies:
+      tslib: 2.5.0
+    dev: false
+
+  /@material/floating-label/15.0.0-canary.684e33d25.0:
+    resolution: {integrity: sha512-f7TPp6bKpGvV3sYYiZHSGlrixXKkXXITW3Esp7KB9jRq42c0H82novmdwvY0eTef4ootmA2JEysr78KQfHBUPg==}
+    dependencies:
+      '@material/animation': 15.0.0-canary.684e33d25.0
+      '@material/base': 15.0.0-canary.684e33d25.0
+      '@material/dom': 15.0.0-canary.684e33d25.0
+      '@material/feature-targeting': 15.0.0-canary.684e33d25.0
+      '@material/rtl': 15.0.0-canary.684e33d25.0
+      '@material/theme': 15.0.0-canary.684e33d25.0
+      '@material/typography': 15.0.0-canary.684e33d25.0
+      tslib: 2.5.0
+    dev: false
+
+  /@material/focus-ring/15.0.0-canary.684e33d25.0:
+    resolution: {integrity: sha512-ikw2RVUfgzXChpWIzPH1VzRvTjYb5ZKj4H+CZf7jqPUXMstFOZg90Bp7ARLZHqYiyNMuUq3zUTHozS6iHorSqg==}
+    dependencies:
+      '@material/dom': 15.0.0-canary.684e33d25.0
+      '@material/feature-targeting': 15.0.0-canary.684e33d25.0
+      '@material/rtl': 15.0.0-canary.684e33d25.0
+    dev: false
+
+  /@material/form-field/15.0.0-canary.684e33d25.0:
+    resolution: {integrity: sha512-vpF9N/uq5no/7+8GAbEH0868FhOuBgxAWRr1Sfb+jthKfBr8OS/wPU/AHzZHdHdAm7PQynbeOXfDsX2dI//PDA==}
+    dependencies:
+      '@material/base': 15.0.0-canary.684e33d25.0
+      '@material/feature-targeting': 15.0.0-canary.684e33d25.0
+      '@material/ripple': 15.0.0-canary.684e33d25.0
+      '@material/rtl': 15.0.0-canary.684e33d25.0
+      '@material/theme': 15.0.0-canary.684e33d25.0
+      '@material/typography': 15.0.0-canary.684e33d25.0
+      tslib: 2.5.0
+    dev: false
+
+  /@material/icon-button/15.0.0-canary.684e33d25.0:
+    resolution: {integrity: sha512-wMI+XGzmIN/o2ePBKg2hLyx7H4pXCRAyyIKMQS1FMp1UKa2tYmiHVX/V8skhKwCqxg3i6Ls/LxMjfPxTR18WvQ==}
+    dependencies:
+      '@material/base': 15.0.0-canary.684e33d25.0
+      '@material/density': 15.0.0-canary.684e33d25.0
+      '@material/dom': 15.0.0-canary.684e33d25.0
+      '@material/elevation': 15.0.0-canary.684e33d25.0
+      '@material/feature-targeting': 15.0.0-canary.684e33d25.0
+      '@material/focus-ring': 15.0.0-canary.684e33d25.0
+      '@material/ripple': 15.0.0-canary.684e33d25.0
+      '@material/rtl': 15.0.0-canary.684e33d25.0
+      '@material/theme': 15.0.0-canary.684e33d25.0
+      '@material/touch-target': 15.0.0-canary.684e33d25.0
+      tslib: 2.5.0
+    dev: false
+
+  /@material/image-list/15.0.0-canary.684e33d25.0:
+    resolution: {integrity: sha512-Ol+uaHYBe5R/cgzlfh5ONnMVX0wO6fV74JMUcQCQlxP6lXau/edARo4tkRc7A7UJUkU3VRv0EpEjLoCRNUPGaA==}
+    dependencies:
+      '@material/feature-targeting': 15.0.0-canary.684e33d25.0
+      '@material/shape': 15.0.0-canary.684e33d25.0
+      '@material/theme': 15.0.0-canary.684e33d25.0
+      '@material/typography': 15.0.0-canary.684e33d25.0
+      tslib: 2.5.0
+    dev: false
+
+  /@material/layout-grid/15.0.0-canary.684e33d25.0:
+    resolution: {integrity: sha512-ALXE1mqFNb/RB2lVRQ3/r1Aufw2mFZnOjRE+boYDVepmAG/xWyPCyaGoavELJF5l4GAb0tXi8wA/8HeGbLOpuA==}
+    dependencies:
+      tslib: 2.5.0
+    dev: false
+
+  /@material/line-ripple/15.0.0-canary.684e33d25.0:
+    resolution: {integrity: sha512-7hRx8C/e9i0P6pgQpNOMfTwSS2r1fwEvBL72QDVGLtLuoKKwsjjgP6Z0Jat/GeHJe87u9LQvGBoD4upt+of/HA==}
+    dependencies:
+      '@material/animation': 15.0.0-canary.684e33d25.0
+      '@material/base': 15.0.0-canary.684e33d25.0
+      '@material/feature-targeting': 15.0.0-canary.684e33d25.0
+      '@material/theme': 15.0.0-canary.684e33d25.0
+      tslib: 2.5.0
+    dev: false
+
+  /@material/linear-progress/15.0.0-canary.684e33d25.0:
+    resolution: {integrity: sha512-iJclt7mKmcMk6pqD7ocXKfCWZhqBoODp7N593jYlxVpTJuEz2wiVAjZUDn/YGj/Uz3CRH+2YFfOiLr9pwWjhDg==}
+    dependencies:
+      '@material/animation': 15.0.0-canary.684e33d25.0
+      '@material/base': 15.0.0-canary.684e33d25.0
+      '@material/dom': 15.0.0-canary.684e33d25.0
+      '@material/feature-targeting': 15.0.0-canary.684e33d25.0
+      '@material/progress-indicator': 15.0.0-canary.684e33d25.0
+      '@material/rtl': 15.0.0-canary.684e33d25.0
+      '@material/theme': 15.0.0-canary.684e33d25.0
+      tslib: 2.5.0
+    dev: false
+
+  /@material/list/15.0.0-canary.684e33d25.0:
+    resolution: {integrity: sha512-rQ+FCSdzmwTcT00IYE0uRV3CS4oGSccKFl9hkcF+aHFW61L7ORh/SCGUDPrEfQFrFkMn5f8qroVJjpUAMXBz4g==}
+    dependencies:
+      '@material/base': 15.0.0-canary.684e33d25.0
+      '@material/density': 15.0.0-canary.684e33d25.0
+      '@material/dom': 15.0.0-canary.684e33d25.0
+      '@material/feature-targeting': 15.0.0-canary.684e33d25.0
+      '@material/ripple': 15.0.0-canary.684e33d25.0
+      '@material/rtl': 15.0.0-canary.684e33d25.0
+      '@material/shape': 15.0.0-canary.684e33d25.0
+      '@material/theme': 15.0.0-canary.684e33d25.0
+      '@material/tokens': 15.0.0-canary.684e33d25.0
+      '@material/typography': 15.0.0-canary.684e33d25.0
+      tslib: 2.5.0
+    dev: false
+
+  /@material/menu-surface/15.0.0-canary.684e33d25.0:
+    resolution: {integrity: sha512-RVO5GAYcfWPaKwxsF/NhUAmrYXQCQBKvRQW0TIlbmAJz6lcFeTs6YZqF3u1C7qrL3ZQGz+sur/7ywj6QU0oMow==}
+    dependencies:
+      '@material/animation': 15.0.0-canary.684e33d25.0
+      '@material/base': 15.0.0-canary.684e33d25.0
+      '@material/elevation': 15.0.0-canary.684e33d25.0
+      '@material/feature-targeting': 15.0.0-canary.684e33d25.0
+      '@material/rtl': 15.0.0-canary.684e33d25.0
+      '@material/shape': 15.0.0-canary.684e33d25.0
+      '@material/theme': 15.0.0-canary.684e33d25.0
+      tslib: 2.5.0
+    dev: false
+
+  /@material/menu/15.0.0-canary.684e33d25.0:
+    resolution: {integrity: sha512-r7wzDLSGSI9629/mfpvsMzkVxpmV75kcD3IrW0Pcu6/Bv/1xi0EvjcUXzNJJoQlwN4Zj35Ymz/PCjZkIDIz68Q==}
+    dependencies:
+      '@material/base': 15.0.0-canary.684e33d25.0
+      '@material/dom': 15.0.0-canary.684e33d25.0
+      '@material/elevation': 15.0.0-canary.684e33d25.0
+      '@material/feature-targeting': 15.0.0-canary.684e33d25.0
+      '@material/list': 15.0.0-canary.684e33d25.0
+      '@material/menu-surface': 15.0.0-canary.684e33d25.0
+      '@material/ripple': 15.0.0-canary.684e33d25.0
+      '@material/rtl': 15.0.0-canary.684e33d25.0
+      '@material/shape': 15.0.0-canary.684e33d25.0
+      '@material/theme': 15.0.0-canary.684e33d25.0
+      '@material/tokens': 15.0.0-canary.684e33d25.0
+      tslib: 2.5.0
+    dev: false
+
+  /@material/notched-outline/15.0.0-canary.684e33d25.0:
+    resolution: {integrity: sha512-9YHcBkvJLPVYzkHcWoTpBZAFrEd+j1hjhGxLhh0LuNrZe8VroUkZD1TTnUAPHRG3os6EqEWWaKb0RN+aPIF2yQ==}
+    dependencies:
+      '@material/base': 15.0.0-canary.684e33d25.0
+      '@material/feature-targeting': 15.0.0-canary.684e33d25.0
+      '@material/floating-label': 15.0.0-canary.684e33d25.0
+      '@material/rtl': 15.0.0-canary.684e33d25.0
+      '@material/shape': 15.0.0-canary.684e33d25.0
+      '@material/theme': 15.0.0-canary.684e33d25.0
+      tslib: 2.5.0
+    dev: false
+
+  /@material/progress-indicator/15.0.0-canary.684e33d25.0:
+    resolution: {integrity: sha512-c0icji4faeNWUoqGENGC7Hav0Puxh0RwXIDVizffaUxKIGbajpIp5+4Zop73fK/xFLGMB/npg7TbP+aCGjQ3fw==}
+    dependencies:
+      tslib: 2.5.0
+    dev: false
+
+  /@material/radio/15.0.0-canary.684e33d25.0:
+    resolution: {integrity: sha512-U3Eh8sNUA8trDla1Bq8Bo02foxYvtoewaKeF8A8tAju81XZ4jRiftfOsOWZDZEHCVbbCB2QwvutvFlnay5n+Aw==}
+    dependencies:
+      '@material/animation': 15.0.0-canary.684e33d25.0
+      '@material/base': 15.0.0-canary.684e33d25.0
+      '@material/density': 15.0.0-canary.684e33d25.0
+      '@material/dom': 15.0.0-canary.684e33d25.0
+      '@material/feature-targeting': 15.0.0-canary.684e33d25.0
+      '@material/focus-ring': 15.0.0-canary.684e33d25.0
+      '@material/ripple': 15.0.0-canary.684e33d25.0
+      '@material/theme': 15.0.0-canary.684e33d25.0
+      '@material/touch-target': 15.0.0-canary.684e33d25.0
+      tslib: 2.5.0
+    dev: false
+
+  /@material/ripple/15.0.0-canary.684e33d25.0:
+    resolution: {integrity: sha512-RyePu7SjIm/OuyyEieZ/gxiPYkNZOZHeid72WRcN9ofdlljj2pifcdPvcfZA+v/DMS33xo5GjG2L/Qj6ClWrKw==}
+    dependencies:
+      '@material/animation': 15.0.0-canary.684e33d25.0
+      '@material/base': 15.0.0-canary.684e33d25.0
+      '@material/dom': 15.0.0-canary.684e33d25.0
+      '@material/feature-targeting': 15.0.0-canary.684e33d25.0
+      '@material/rtl': 15.0.0-canary.684e33d25.0
+      '@material/theme': 15.0.0-canary.684e33d25.0
+      tslib: 2.5.0
+    dev: false
+
+  /@material/rtl/15.0.0-canary.684e33d25.0:
+    resolution: {integrity: sha512-NqdJl8Ayupp1Th+vCNCpVQHbUFOuF7TCte9LD1norTIBUF/QizIxWby2W5uUEiPbnh5j9PmE1CJtfLwKun3pcw==}
+    dependencies:
+      '@material/theme': 15.0.0-canary.684e33d25.0
+      tslib: 2.5.0
+    dev: false
+
+  /@material/segmented-button/15.0.0-canary.684e33d25.0:
+    resolution: {integrity: sha512-bEGgg8vgXNLyukyV8HRjFMuQ6t6nm5LQ4Pgm22um61Yc8qyi0BOqV41OR4SVdUrUqZxh1aVD+p+4NN03+LfQXw==}
+    dependencies:
+      '@material/base': 15.0.0-canary.684e33d25.0
+      '@material/elevation': 15.0.0-canary.684e33d25.0
+      '@material/feature-targeting': 15.0.0-canary.684e33d25.0
+      '@material/ripple': 15.0.0-canary.684e33d25.0
+      '@material/theme': 15.0.0-canary.684e33d25.0
+      '@material/touch-target': 15.0.0-canary.684e33d25.0
+      '@material/typography': 15.0.0-canary.684e33d25.0
+      tslib: 2.5.0
+    dev: false
+
+  /@material/select/15.0.0-canary.684e33d25.0:
+    resolution: {integrity: sha512-kf178/2TeEinTv0mgmSBcmmExQ2h7a7dtR1E3WuqQgisJ/R6+zVLMkC2CnfIyzxYX2vkuUTG0ue3Reh/6XiqSg==}
+    dependencies:
+      '@material/animation': 15.0.0-canary.684e33d25.0
+      '@material/base': 15.0.0-canary.684e33d25.0
+      '@material/density': 15.0.0-canary.684e33d25.0
+      '@material/dom': 15.0.0-canary.684e33d25.0
+      '@material/elevation': 15.0.0-canary.684e33d25.0
+      '@material/feature-targeting': 15.0.0-canary.684e33d25.0
+      '@material/floating-label': 15.0.0-canary.684e33d25.0
+      '@material/line-ripple': 15.0.0-canary.684e33d25.0
+      '@material/list': 15.0.0-canary.684e33d25.0
+      '@material/menu': 15.0.0-canary.684e33d25.0
+      '@material/menu-surface': 15.0.0-canary.684e33d25.0
+      '@material/notched-outline': 15.0.0-canary.684e33d25.0
+      '@material/ripple': 15.0.0-canary.684e33d25.0
+      '@material/rtl': 15.0.0-canary.684e33d25.0
+      '@material/shape': 15.0.0-canary.684e33d25.0
+      '@material/theme': 15.0.0-canary.684e33d25.0
+      '@material/tokens': 15.0.0-canary.684e33d25.0
+      '@material/typography': 15.0.0-canary.684e33d25.0
+      tslib: 2.5.0
+    dev: false
+
+  /@material/shape/15.0.0-canary.684e33d25.0:
+    resolution: {integrity: sha512-aEelpaTFmpnCji3TUGP9bVCS/bRVjUmLTHBPZtuu1gOrUVVtJ6kYOg73dZNJF+XOoNL2yOX/LRcKwsop29tptA==}
+    dependencies:
+      '@material/feature-targeting': 15.0.0-canary.684e33d25.0
+      '@material/rtl': 15.0.0-canary.684e33d25.0
+      '@material/theme': 15.0.0-canary.684e33d25.0
+      tslib: 2.5.0
+    dev: false
+
+  /@material/slider/15.0.0-canary.684e33d25.0:
+    resolution: {integrity: sha512-WVyK+2pSNSZmj07M2K/a3TADoQ9FBCndfNC/vE7/wGIg4dddJJK5KvQ+yruf9R2cSzTL/S1sZ5WpyyeM8E9HTw==}
+    dependencies:
+      '@material/animation': 15.0.0-canary.684e33d25.0
+      '@material/base': 15.0.0-canary.684e33d25.0
+      '@material/dom': 15.0.0-canary.684e33d25.0
+      '@material/elevation': 15.0.0-canary.684e33d25.0
+      '@material/feature-targeting': 15.0.0-canary.684e33d25.0
+      '@material/ripple': 15.0.0-canary.684e33d25.0
+      '@material/rtl': 15.0.0-canary.684e33d25.0
+      '@material/theme': 15.0.0-canary.684e33d25.0
+      '@material/tokens': 15.0.0-canary.684e33d25.0
+      '@material/typography': 15.0.0-canary.684e33d25.0
+      tslib: 2.5.0
+    dev: false
+
+  /@material/snackbar/15.0.0-canary.684e33d25.0:
+    resolution: {integrity: sha512-itO+DCkOannZzR1/cCHcqAm7ifhuFvXmDItNoA8qLEcAyJDJJRkhpwj3XQ01yuo9gBFcSctp7Txt7e+Hncm/Jg==}
+    dependencies:
+      '@material/animation': 15.0.0-canary.684e33d25.0
+      '@material/base': 15.0.0-canary.684e33d25.0
+      '@material/button': 15.0.0-canary.684e33d25.0
+      '@material/dom': 15.0.0-canary.684e33d25.0
+      '@material/elevation': 15.0.0-canary.684e33d25.0
+      '@material/feature-targeting': 15.0.0-canary.684e33d25.0
+      '@material/icon-button': 15.0.0-canary.684e33d25.0
+      '@material/ripple': 15.0.0-canary.684e33d25.0
+      '@material/rtl': 15.0.0-canary.684e33d25.0
+      '@material/shape': 15.0.0-canary.684e33d25.0
+      '@material/theme': 15.0.0-canary.684e33d25.0
+      '@material/tokens': 15.0.0-canary.684e33d25.0
+      '@material/typography': 15.0.0-canary.684e33d25.0
+      tslib: 2.5.0
+    dev: false
+
+  /@material/switch/15.0.0-canary.684e33d25.0:
+    resolution: {integrity: sha512-Jxi0gl92yvvZZsAPxvVHzXx2ga+T/djMow98jvEczmpUorWnAhgiCr9CsSSRoosahWyRB8NLZOxUQrACxvffjw==}
+    dependencies:
+      '@material/animation': 15.0.0-canary.684e33d25.0
+      '@material/base': 15.0.0-canary.684e33d25.0
+      '@material/density': 15.0.0-canary.684e33d25.0
+      '@material/dom': 15.0.0-canary.684e33d25.0
+      '@material/elevation': 15.0.0-canary.684e33d25.0
+      '@material/feature-targeting': 15.0.0-canary.684e33d25.0
+      '@material/focus-ring': 15.0.0-canary.684e33d25.0
+      '@material/ripple': 15.0.0-canary.684e33d25.0
+      '@material/rtl': 15.0.0-canary.684e33d25.0
+      '@material/shape': 15.0.0-canary.684e33d25.0
+      '@material/theme': 15.0.0-canary.684e33d25.0
+      '@material/tokens': 15.0.0-canary.684e33d25.0
+      safevalues: 0.3.4
+      tslib: 2.5.0
+    dev: false
+
+  /@material/tab-bar/15.0.0-canary.684e33d25.0:
+    resolution: {integrity: sha512-SW/cMaDsIGGkM1ag3A7GJRlmr8eXmObWsvitQJzh6Azr5zzZtSI+GQygkMesAEE1gbpqOVN8d40rh3H7VVIAcA==}
+    dependencies:
+      '@material/animation': 15.0.0-canary.684e33d25.0
+      '@material/base': 15.0.0-canary.684e33d25.0
+      '@material/density': 15.0.0-canary.684e33d25.0
+      '@material/elevation': 15.0.0-canary.684e33d25.0
+      '@material/feature-targeting': 15.0.0-canary.684e33d25.0
+      '@material/tab': 15.0.0-canary.684e33d25.0
+      '@material/tab-indicator': 15.0.0-canary.684e33d25.0
+      '@material/tab-scroller': 15.0.0-canary.684e33d25.0
+      '@material/theme': 15.0.0-canary.684e33d25.0
+      '@material/tokens': 15.0.0-canary.684e33d25.0
+      '@material/typography': 15.0.0-canary.684e33d25.0
+      tslib: 2.5.0
+    dev: false
+
+  /@material/tab-indicator/15.0.0-canary.684e33d25.0:
+    resolution: {integrity: sha512-kKICqSPqOlaf0lzaFFCmuOqPXJC+cK48Qmsc+m5o6fJhkmuZRCYpIwB2JeP+uZSOq/bTH+SrPtCtnVlgWg6ksA==}
+    dependencies:
+      '@material/animation': 15.0.0-canary.684e33d25.0
+      '@material/base': 15.0.0-canary.684e33d25.0
+      '@material/feature-targeting': 15.0.0-canary.684e33d25.0
+      '@material/theme': 15.0.0-canary.684e33d25.0
+      tslib: 2.5.0
+    dev: false
+
+  /@material/tab-scroller/15.0.0-canary.684e33d25.0:
+    resolution: {integrity: sha512-H6EU/TSiK/M2DyyORX5GEtXD9rKYxTMHC2VxsNWARPMFJGzgeW2ugYkFv+rKI1/c0bs0CJ4e+qFnOlBsQXZvyQ==}
+    dependencies:
+      '@material/animation': 15.0.0-canary.684e33d25.0
+      '@material/base': 15.0.0-canary.684e33d25.0
+      '@material/dom': 15.0.0-canary.684e33d25.0
+      '@material/feature-targeting': 15.0.0-canary.684e33d25.0
+      '@material/tab': 15.0.0-canary.684e33d25.0
+      tslib: 2.5.0
+    dev: false
+
+  /@material/tab/15.0.0-canary.684e33d25.0:
+    resolution: {integrity: sha512-WQL3wj9syHNcfe8KbgGGUcA34M8C/xZ+n0Fkkh8Kk6puVwaU+xqUNihsxPY6YzKpmh4PZ4oJaBdiN8zvFT1zqQ==}
+    dependencies:
+      '@material/base': 15.0.0-canary.684e33d25.0
+      '@material/elevation': 15.0.0-canary.684e33d25.0
+      '@material/feature-targeting': 15.0.0-canary.684e33d25.0
+      '@material/focus-ring': 15.0.0-canary.684e33d25.0
+      '@material/ripple': 15.0.0-canary.684e33d25.0
+      '@material/rtl': 15.0.0-canary.684e33d25.0
+      '@material/tab-indicator': 15.0.0-canary.684e33d25.0
+      '@material/theme': 15.0.0-canary.684e33d25.0
+      '@material/tokens': 15.0.0-canary.684e33d25.0
+      '@material/typography': 15.0.0-canary.684e33d25.0
+      tslib: 2.5.0
+    dev: false
+
+  /@material/textfield/15.0.0-canary.684e33d25.0:
+    resolution: {integrity: sha512-OvgpDXjvpyJTtAWskO69IDybFvDNzr9w2PN/Fk7yFm+uNVupaWz1Ew8lZ4gGslaTNSVmh2XcsvmzxcLINSiiNg==}
+    dependencies:
+      '@material/animation': 15.0.0-canary.684e33d25.0
+      '@material/base': 15.0.0-canary.684e33d25.0
+      '@material/density': 15.0.0-canary.684e33d25.0
+      '@material/dom': 15.0.0-canary.684e33d25.0
+      '@material/feature-targeting': 15.0.0-canary.684e33d25.0
+      '@material/floating-label': 15.0.0-canary.684e33d25.0
+      '@material/line-ripple': 15.0.0-canary.684e33d25.0
+      '@material/notched-outline': 15.0.0-canary.684e33d25.0
+      '@material/ripple': 15.0.0-canary.684e33d25.0
+      '@material/rtl': 15.0.0-canary.684e33d25.0
+      '@material/shape': 15.0.0-canary.684e33d25.0
+      '@material/theme': 15.0.0-canary.684e33d25.0
+      '@material/tokens': 15.0.0-canary.684e33d25.0
+      '@material/typography': 15.0.0-canary.684e33d25.0
+      tslib: 2.5.0
+    dev: false
+
+  /@material/theme/15.0.0-canary.684e33d25.0:
+    resolution: {integrity: sha512-AZxaXXAvRKzAi20RlMxzt2U5UmkCWyv7DMWEBXsxtG5Tk54mi1HsbVUp3fxDPTlmL7Pq8p1/DESg/o7TgRCVlw==}
+    dependencies:
+      '@material/feature-targeting': 15.0.0-canary.684e33d25.0
+      tslib: 2.5.0
+    dev: false
+
+  /@material/tokens/15.0.0-canary.684e33d25.0:
+    resolution: {integrity: sha512-wVwbQOTCXDPKYPdHQHLr026y36MMFelID1CmbfRk6mSol4O8yE9U0fXcShfRDW8Qo5E3X31w9c2A6T3neJY7wQ==}
+    dependencies:
+      '@material/elevation': 15.0.0-canary.684e33d25.0
+    dev: false
+
+  /@material/tooltip/15.0.0-canary.684e33d25.0:
+    resolution: {integrity: sha512-dtm26QjxyQdinc8btgz6yys07b7bUW4FZgNF2EBPeGrICrPg7jf+JEvDziz5g8VMaTBQLOQRSCGy0MKuRlOjLw==}
+    dependencies:
+      '@material/animation': 15.0.0-canary.684e33d25.0
+      '@material/base': 15.0.0-canary.684e33d25.0
+      '@material/button': 15.0.0-canary.684e33d25.0
+      '@material/dom': 15.0.0-canary.684e33d25.0
+      '@material/elevation': 15.0.0-canary.684e33d25.0
+      '@material/feature-targeting': 15.0.0-canary.684e33d25.0
+      '@material/rtl': 15.0.0-canary.684e33d25.0
+      '@material/shape': 15.0.0-canary.684e33d25.0
+      '@material/theme': 15.0.0-canary.684e33d25.0
+      '@material/tokens': 15.0.0-canary.684e33d25.0
+      '@material/typography': 15.0.0-canary.684e33d25.0
+      safevalues: 0.3.4
+      tslib: 2.5.0
+    dev: false
+
+  /@material/top-app-bar/15.0.0-canary.684e33d25.0:
+    resolution: {integrity: sha512-1M+oupUxflfW7u81P1XlxoLZB8bLzwtpKofIfDNRbEsiKhlLTERJR3Yak3BGE9xakNMysAaBHlkb5MrN5bNPFw==}
+    dependencies:
+      '@material/animation': 15.0.0-canary.684e33d25.0
+      '@material/base': 15.0.0-canary.684e33d25.0
+      '@material/elevation': 15.0.0-canary.684e33d25.0
+      '@material/ripple': 15.0.0-canary.684e33d25.0
+      '@material/rtl': 15.0.0-canary.684e33d25.0
+      '@material/shape': 15.0.0-canary.684e33d25.0
+      '@material/theme': 15.0.0-canary.684e33d25.0
+      '@material/typography': 15.0.0-canary.684e33d25.0
+      tslib: 2.5.0
+    dev: false
+
+  /@material/touch-target/15.0.0-canary.684e33d25.0:
+    resolution: {integrity: sha512-zdE69Slg8+T7sTn1OwqZ6H7WBYac9mxJ/JlJqfTqthzIjZRcCxBSYymQJcDHjsrPnUojOtr9U4Tpm5YZ96TEkQ==}
+    dependencies:
+      '@material/base': 15.0.0-canary.684e33d25.0
+      '@material/feature-targeting': 15.0.0-canary.684e33d25.0
+      '@material/rtl': 15.0.0-canary.684e33d25.0
+      '@material/theme': 15.0.0-canary.684e33d25.0
+      tslib: 2.5.0
+    dev: false
+
+  /@material/typography/15.0.0-canary.684e33d25.0:
+    resolution: {integrity: sha512-aVnvgMwcfNa/K4wujzpKDIxjGl2hbkEL+m+OKDSQqWYjKcP9QrbzCXJruJBqxrBoPRHLbqo47k5f9uT8raSgjw==}
+    dependencies:
+      '@material/feature-targeting': 15.0.0-canary.684e33d25.0
+      '@material/theme': 15.0.0-canary.684e33d25.0
+      tslib: 2.5.0
+    dev: false
+
   /@ngtools/webpack/15.2.6_fsazstgrle5bknr3kp5xug5hku:
     resolution: {integrity: sha512-I+kekKItfsCLdX+ZjjmsWqd0AyoYGTQPjlbQAiPtmdH73/rfPOF4Q/3AU4tzTdn0n0GXqZWv6VOs91w99ydi0A==}
     engines: {node: ^14.20.0 || ^16.13.0 || >=18.10.0, npm: ^6.11.0 || ^7.5.6 || >=8.0.0, yarn: '>= 1.13.0'}
@@ -2498,6 +3245,10 @@ packages:
       color-convert: 2.0.1
     dev: true
 
+  /any-promise/1.3.0:
+    resolution: {integrity: sha512-7UvmKalWRt1wgjL1RrGxoSJW/0QZFIegpeGvZG9kjp8vrRu55XTHbwnqq2GpXm9uLbcuhxm3IqX9OB4MZR1b2A==}
+    dev: true
+
   /anymatch/3.1.3:
     resolution: {integrity: sha512-KMReFUr0B4t+D+OBkjR3KYqvocp2XaSzO55UcB6mgQMd3KbcE+mWTyvVV7D/zsdEbNnV6acZUutkiHQXvTr1Rw==}
     engines: {node: '>= 8'}
@@ -2516,6 +3267,10 @@ packages:
     dependencies:
       delegates: 1.0.0
       readable-stream: 3.6.2
+    dev: true
+
+  /arg/5.0.2:
+    resolution: {integrity: sha512-PYjyFOLKQ9y57JvQ6QLo8dAgNqswh8M1RMJYdQduT6xbWSgK36P/Z/v+p888pM69jMMfS8Xd8F6I1kQ/I9HUGg==}
     dev: true
 
   /argparse/1.0.10:
@@ -2545,6 +3300,22 @@ packages:
       normalize-range: 0.1.2
       picocolors: 1.0.0
       postcss: 8.4.21
+      postcss-value-parser: 4.2.0
+    dev: true
+
+  /autoprefixer/10.4.14_postcss@8.4.22:
+    resolution: {integrity: sha512-FQzyfOsTlwVzjHxKEqRIAdJx9niO6VCBCoEwax/VLSoQF29ggECcPuBqUMZ+u8jCZOPSy8b8/8KnuFbp0SaFZQ==}
+    engines: {node: ^10 || ^12 || >=14}
+    hasBin: true
+    peerDependencies:
+      postcss: ^8.1.0
+    dependencies:
+      browserslist: 4.21.5
+      caniuse-lite: 1.0.30001480
+      fraction.js: 4.2.0
+      normalize-range: 0.1.2
+      picocolors: 1.0.0
+      postcss: 8.4.22
       postcss-value-parser: 4.2.0
     dev: true
 
@@ -2835,6 +3606,11 @@ packages:
     engines: {node: '>=6'}
     dev: true
 
+  /camelcase-css/2.0.1:
+    resolution: {integrity: sha512-QOSvevhslijgYwRx6Rv7zKdMF8lbRmx+uQGx2+vDc+KI/eBnsy9kit5aj23AgGu3pa4t9AgwbnXWqS+iOY+2aA==}
+    engines: {node: '>= 6'}
+    dev: true
+
   /camelcase/5.3.1:
     resolution: {integrity: sha512-L28STB170nwWS63UjtlEOE3dldQApaJXZkOI1uMFfzf3rRuPegHaHesyee+YxQ+W6SvRDQV6UrdOdRiR153wJg==}
     engines: {node: '>=6'}
@@ -2977,6 +3753,11 @@ packages:
     resolution: {integrity: sha512-GpVkmM8vF2vQUkj2LvZmD35JxeJOLCwJ9cUkugyk2nuhbv3+mJvpLYYt+0+USMxE+oj+ey/lJEnhZw75x/OMcQ==}
     dev: true
 
+  /commander/4.1.1:
+    resolution: {integrity: sha512-NOKm8xhkzAjzFx8B2v5OAHT+u5pRQc2UCa2Vq9jYL/31o2wi9mxBA7LIFs3sV5VSC49z6pEhfbMULvShKj26WA==}
+    engines: {node: '>= 6'}
+    dev: true
+
   /commondir/1.0.1:
     resolution: {integrity: sha512-W9pAhw0ja1Edb5GVdIF1mjZw/ASI0AlShXM83UUGe2DVr5TdAPEA1OA8m/g8zWp9x6On7gqufY+FatDbC3MDQg==}
     dev: true
@@ -3115,7 +3896,7 @@ packages:
       css-select: 4.3.0
       parse5: 6.0.1
       parse5-htmlparser2-tree-adapter: 6.0.1
-      postcss: 8.4.21
+      postcss: 8.4.22
       pretty-bytes: 5.6.0
     dev: true
 
@@ -3134,12 +3915,12 @@ packages:
     peerDependencies:
       webpack: ^5.0.0
     dependencies:
-      icss-utils: 5.1.0_postcss@8.4.21
-      postcss: 8.4.21
-      postcss-modules-extract-imports: 3.0.0_postcss@8.4.21
-      postcss-modules-local-by-default: 4.0.0_postcss@8.4.21
-      postcss-modules-scope: 3.0.0_postcss@8.4.21
-      postcss-modules-values: 4.0.0_postcss@8.4.21
+      icss-utils: 5.1.0_postcss@8.4.22
+      postcss: 8.4.22
+      postcss-modules-extract-imports: 3.0.0_postcss@8.4.22
+      postcss-modules-local-by-default: 4.0.0_postcss@8.4.22
+      postcss-modules-scope: 3.0.0_postcss@8.4.22
+      postcss-modules-values: 4.0.0_postcss@8.4.22
       postcss-value-parser: 4.2.0
       semver: 7.3.8
       webpack: 5.76.1_esbuild@0.17.8
@@ -3260,11 +4041,19 @@ packages:
     resolution: {integrity: sha512-uJaamHkagcZtHPqCIHZxnFrXlunQXgBOsZSUOWwFw31QJCAbyTBoHMW75YOTur5ZNx8pIeAKgf6GWIgaqqiLhA==}
     dev: true
 
+  /didyoumean/1.2.2:
+    resolution: {integrity: sha512-gxtyfqMg7GKyhQmb056K7M3xszy/myH8w+B4RT+QXBQsvAOdc3XymqDDPHx1BgPgsdAA5SIifona89YtRATDzw==}
+    dev: true
+
   /dir-glob/3.0.1:
     resolution: {integrity: sha512-WkrWp9GR4KXfKGYzOLmTuGVi1UWFfws377n9cc55/tb6DuqyF6pcQ5AbiHEshaDpY9v6oaSr2XCDidGmMwdzIA==}
     engines: {node: '>=8'}
     dependencies:
       path-type: 4.0.0
+    dev: true
+
+  /dlv/1.1.3:
+    resolution: {integrity: sha512-+HlytyjlPKnIG8XuRG8WvmBP8xs8P71y+SKKS6ZXWoEgLuePxtDoUEiH7WkdePWrQ5JBpE6aoVqfZfJUQkjXwA==}
     dev: true
 
   /dns-equal/1.0.0:
@@ -3388,7 +4177,6 @@ packages:
   /entities/4.5.0:
     resolution: {integrity: sha512-V0hjH4dGPh9Ao5p0MoRY6BVqtwCjhz6vI5LT8AJ55H+4g9/4vbHx1I54fS0XuclLhDHArPQCiMjDxjaL8fPxhw==}
     engines: {node: '>=0.12'}
-    dev: true
 
   /env-paths/2.2.1:
     resolution: {integrity: sha512-+h1lkLKhZMTYjog1VEpJNG7NZJWcuc2DDk/qsqSTRRCOXiLjeQ1d1/udrUGhqMxUgAlwKNZ0cf2uqan5GLuS2A==}
@@ -3703,7 +4491,6 @@ packages:
 
   /fraction.js/4.2.0:
     resolution: {integrity: sha512-MhLuK+2gUcnZe8ZHlaaINnQLl0xRIGRfcGk2yl8xoQAfHrSsL3rYu6FCmBdkdbhc9EPlwyGHewaRsvwRMJtAlA==}
-    dev: true
 
   /fresh/0.5.2:
     resolution: {integrity: sha512-zJ2mQYM18rEFOudeV4GShTGIQ7RbzA7ozbU9I/XBpm7kqgMywgmylMwXHxZJmkVoYkna9d2pVXVXPdYTP9ej8Q==}
@@ -3811,6 +4598,17 @@ packages:
 
   /glob-to-regexp/0.4.1:
     resolution: {integrity: sha512-lkX1HJXwyMcprw/5YUZc2s7DrpAiHB21/V+E1rHUrVNokkvB6bqMzT0VfV6/86ZNabt1k14YOIaT7nDvOX3Iiw==}
+    dev: true
+
+  /glob/7.1.6:
+    resolution: {integrity: sha512-LwaxwyZ72Lk7vZINtNNrywX0ZuLyStrdDtabefZKAY5ZGJhVtgdznluResxNmPitE0SAO+O26sWTHeKSI2wMBA==}
+    dependencies:
+      fs.realpath: 1.0.0
+      inflight: 1.0.6
+      inherits: 2.0.4
+      minimatch: 3.1.2
+      once: 1.4.0
+      path-is-absolute: 1.0.1
     dev: true
 
   /glob/7.2.3:
@@ -4040,13 +4838,13 @@ packages:
       safer-buffer: 2.1.2
     dev: true
 
-  /icss-utils/5.1.0_postcss@8.4.21:
+  /icss-utils/5.1.0_postcss@8.4.22:
     resolution: {integrity: sha512-soFhflCVWLfRNOPU3iv5Z9VUdT44xFRbzjLsEzSr5AQmgqPMTHdU3PMT1Cf1ssx8fLNJDA1juftYl+PUcv3MqA==}
     engines: {node: ^10 || ^12 || >= 14}
     peerDependencies:
       postcss: ^8.1.0
     dependencies:
-      postcss: 8.4.21
+      postcss: 8.4.22
     dev: true
 
   /ieee754/1.2.1:
@@ -4318,6 +5116,11 @@ packages:
       supports-color: 8.1.1
     dev: true
 
+  /jiti/1.18.2:
+    resolution: {integrity: sha512-QAdOptna2NYiSSpv0O/BwoHBSmz4YhpzJHyi+fnMRTXFjp7B8i/YG5Z8IfusxB1ufjcD2Sre1F3R+nX3fvy7gg==}
+    hasBin: true
+    dev: true
+
   /js-tokens/4.0.0:
     resolution: {integrity: sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==}
     dev: true
@@ -4517,6 +5320,11 @@ packages:
     dependencies:
       webpack: 5.76.1_esbuild@0.17.8
       webpack-sources: 3.2.3
+    dev: true
+
+  /lilconfig/2.1.0:
+    resolution: {integrity: sha512-utWOt/GHzuUxnLKxB6dk81RoOeoNeHgbrXiuGk4yyF5qlRz+iIVWu56E2fqGHFrXz0QNUhLB/8nKqvRH66JKGQ==}
+    engines: {node: '>=10'}
     dev: true
 
   /lines-and-columns/1.2.4:
@@ -4912,6 +5720,14 @@ packages:
     resolution: {integrity: sha512-nnbWWOkoWyUsTjKrhgD0dcz22mdkSnpYqbEjIm2nhwhuxlSkpywJmBo8h0ZqJdkp73mb90SssHkN4rsRaBAfAA==}
     dev: true
 
+  /mz/2.7.0:
+    resolution: {integrity: sha512-z81GNO7nnYMEhrGh9LeymoE4+Yr0Wn5McHIZMK5cfQCl+NDX08sCZgUc9/6MHni9IWuFLm1Z3HTCXu2z9fN62Q==}
+    dependencies:
+      any-promise: 1.3.0
+      object-assign: 4.1.1
+      thenify-all: 1.6.0
+    dev: true
+
   /nanoid/3.3.6:
     resolution: {integrity: sha512-BGcqMMJuToF7i1rt+2PWSNVnWIkGCU78jBG3RxO/bZlnZPK2Cmi2QaffxGO/2RvWi9sL+FAiRiXMgsyxQ1DIDA==}
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
@@ -5111,6 +5927,11 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
+  /object-hash/3.0.0:
+    resolution: {integrity: sha512-RSn9F68PjH9HqtltsSnqYC1XXoWe9Bju5+213R98cNGttag9q9yAOTzdbsqvIa7aNm5WffBZFpWYr2aWrklWAw==}
+    engines: {node: '>= 6'}
+    dev: true
+
   /object-inspect/1.12.3:
     resolution: {integrity: sha512-geUvdk7c+eizMNUDkRpW1wJwgfOiOeHbxBR/hLXK1aT6zmVSO0jsQcs7fj6MGw89jC/cjGfLcNOrtMYtGqm81g==}
     dev: true
@@ -5296,7 +6117,6 @@ packages:
     resolution: {integrity: sha512-Czj1WaSVpaoj0wbhMzLmWD69anp2WH7FXMB9n1Sy8/ZFF9jolSQVMu1Ij5WIyGmcBmhk7EOndpO4mIpihVqAXw==}
     dependencies:
       entities: 4.5.0
-    dev: true
 
   /parseurl/1.3.3:
     resolution: {integrity: sha512-CiyeOxFT/JZyN5m0z9PfXw4SCBJ6Sygz1Dpl0wqjlhDEGGBP1GnsUVEL0p63hoG1fcj3fHynXi9NYO4nWOL+qQ==}
@@ -5348,11 +6168,21 @@ packages:
     engines: {node: '>=8.6'}
     dev: true
 
+  /pify/2.3.0:
+    resolution: {integrity: sha512-udgsAY+fTnvv7kI7aaxbqwWNb0AHiB0qBO89PZKPkoTmGOgdbrHDKD+0B2X4uTfJ/FT1R09r9gTsjUjNJotuog==}
+    engines: {node: '>=0.10.0'}
+    dev: true
+
   /pify/4.0.1:
     resolution: {integrity: sha512-uB80kBFb/tfd68bVleG9T5GGsGPjJrLAUpR5PZIrhBnIaRTQRjqdJSsIKkOP6OAIFbj7GOrcudc5pNjZ+geV2g==}
     engines: {node: '>=6'}
     dev: true
     optional: true
+
+  /pirates/4.0.5:
+    resolution: {integrity: sha512-8V9+HQPupnaXMA23c5hvl69zXvTwTzyAYasnkb0Tts4XvO4CliqONMOnvlq26rkhLC3nWDFBJf73LU1e1VZLaQ==}
+    engines: {node: '>= 6'}
+    dev: true
 
   /piscina/3.2.0:
     resolution: {integrity: sha512-yn/jMdHRw+q2ZJhFhyqsmANcbF6V2QwmD84c6xRau+QpQOmtrBCoRGdvTfeuFDYXB5W2m6MfLkjkvQa9lUSmIA==}
@@ -5371,6 +6201,45 @@ packages:
       find-up: 4.1.0
     dev: true
 
+  /postcss-import/14.1.0_postcss@8.4.22:
+    resolution: {integrity: sha512-flwI+Vgm4SElObFVPpTIT7SU7R3qk2L7PyduMcokiaVKuWv9d/U+Gm/QAd8NDLuykTWTkcrjOeD2Pp1rMeBTGw==}
+    engines: {node: '>=10.0.0'}
+    peerDependencies:
+      postcss: ^8.0.0
+    dependencies:
+      postcss: 8.4.22
+      postcss-value-parser: 4.2.0
+      read-cache: 1.0.0
+      resolve: 1.22.2
+    dev: true
+
+  /postcss-js/4.0.1_postcss@8.4.22:
+    resolution: {integrity: sha512-dDLF8pEO191hJMtlHFPRa8xsizHaM82MLfNkUHdUtVEV3tgTp5oj+8qbEqYM57SLfc74KSbw//4SeJma2LRVIw==}
+    engines: {node: ^12 || ^14 || >= 16}
+    peerDependencies:
+      postcss: ^8.4.21
+    dependencies:
+      camelcase-css: 2.0.1
+      postcss: 8.4.22
+    dev: true
+
+  /postcss-load-config/3.1.4_postcss@8.4.22:
+    resolution: {integrity: sha512-6DiM4E7v4coTE4uzA8U//WhtPwyhiim3eyjEMFCnUpzbrkK9wJHgKDT2mR+HbtSrd/NubVaYTOpSpjUl8NQeRg==}
+    engines: {node: '>= 10'}
+    peerDependencies:
+      postcss: '>=8.0.9'
+      ts-node: '>=9.0.0'
+    peerDependenciesMeta:
+      postcss:
+        optional: true
+      ts-node:
+        optional: true
+    dependencies:
+      lilconfig: 2.1.0
+      postcss: 8.4.22
+      yaml: 1.10.2
+    dev: true
+
   /postcss-loader/7.0.2_mquw4qchulb5tpkmg3p2j6qala:
     resolution: {integrity: sha512-fUJzV/QH7NXUAqV8dWJ9Lg4aTkDCezpTS5HgJ2DvqznexTbSTxgi/dTECvTZ15BwKTtk8G/bqI/QTu2HPd3ZCg==}
     engines: {node: '>= 14.15.0'}
@@ -5385,45 +6254,55 @@ packages:
       webpack: 5.76.1_esbuild@0.17.8
     dev: true
 
-  /postcss-modules-extract-imports/3.0.0_postcss@8.4.21:
+  /postcss-modules-extract-imports/3.0.0_postcss@8.4.22:
     resolution: {integrity: sha512-bdHleFnP3kZ4NYDhuGlVK+CMrQ/pqUm8bx/oGL93K6gVwiclvX5x0n76fYMKuIGKzlABOy13zsvqjb0f92TEXw==}
     engines: {node: ^10 || ^12 || >= 14}
     peerDependencies:
       postcss: ^8.1.0
     dependencies:
-      postcss: 8.4.21
+      postcss: 8.4.22
     dev: true
 
-  /postcss-modules-local-by-default/4.0.0_postcss@8.4.21:
+  /postcss-modules-local-by-default/4.0.0_postcss@8.4.22:
     resolution: {integrity: sha512-sT7ihtmGSF9yhm6ggikHdV0hlziDTX7oFoXtuVWeDd3hHObNkcHRo9V3yg7vCAY7cONyxJC/XXCmmiHHcvX7bQ==}
     engines: {node: ^10 || ^12 || >= 14}
     peerDependencies:
       postcss: ^8.1.0
     dependencies:
-      icss-utils: 5.1.0_postcss@8.4.21
-      postcss: 8.4.21
+      icss-utils: 5.1.0_postcss@8.4.22
+      postcss: 8.4.22
       postcss-selector-parser: 6.0.11
       postcss-value-parser: 4.2.0
     dev: true
 
-  /postcss-modules-scope/3.0.0_postcss@8.4.21:
+  /postcss-modules-scope/3.0.0_postcss@8.4.22:
     resolution: {integrity: sha512-hncihwFA2yPath8oZ15PZqvWGkWf+XUfQgUGamS4LqoP1anQLOsOJw0vr7J7IwLpoY9fatA2qiGUGmuZL0Iqlg==}
     engines: {node: ^10 || ^12 || >= 14}
     peerDependencies:
       postcss: ^8.1.0
     dependencies:
-      postcss: 8.4.21
+      postcss: 8.4.22
       postcss-selector-parser: 6.0.11
     dev: true
 
-  /postcss-modules-values/4.0.0_postcss@8.4.21:
+  /postcss-modules-values/4.0.0_postcss@8.4.22:
     resolution: {integrity: sha512-RDxHkAiEGI78gS2ofyvCsu7iycRv7oqw5xMWn9iMoR0N/7mf9D50ecQqUo5BZ9Zh2vH4bCUR/ktCqbB9m8vJjQ==}
     engines: {node: ^10 || ^12 || >= 14}
     peerDependencies:
       postcss: ^8.1.0
     dependencies:
-      icss-utils: 5.1.0_postcss@8.4.21
-      postcss: 8.4.21
+      icss-utils: 5.1.0_postcss@8.4.22
+      postcss: 8.4.22
+    dev: true
+
+  /postcss-nested/6.0.0_postcss@8.4.22:
+    resolution: {integrity: sha512-0DkamqrPcmkBDsLn+vQDIrtkSbNkv5AD/M322ySo9kqFkCIYklym2xEmWkwo+Y3/qZo34tzEPNUw4y7yMCdv5w==}
+    engines: {node: '>=12.0'}
+    peerDependencies:
+      postcss: ^8.2.14
+    dependencies:
+      postcss: 8.4.22
+      postcss-selector-parser: 6.0.11
     dev: true
 
   /postcss-selector-parser/6.0.11:
@@ -5440,6 +6319,15 @@ packages:
 
   /postcss/8.4.21:
     resolution: {integrity: sha512-tP7u/Sn/dVxK2NnruI4H9BG+x+Wxz6oeZ1cJ8P6G/PZY0IKk4k/63TDsQf2kQq3+qoJeLm2kIBUNlZe3zgb4Zg==}
+    engines: {node: ^10 || ^12 || >=14}
+    dependencies:
+      nanoid: 3.3.6
+      picocolors: 1.0.0
+      source-map-js: 1.0.2
+    dev: true
+
+  /postcss/8.4.22:
+    resolution: {integrity: sha512-XseknLAfRHzVWjCEtdviapiBtfLdgyzExD50Rg2ePaucEesyh8Wv4VPdW0nbyDa1ydbrAxV19jvMT4+LFmcNUA==}
     engines: {node: ^10 || ^12 || >=14}
     dependencies:
       nanoid: 3.3.6
@@ -5512,6 +6400,11 @@ packages:
     resolution: {integrity: sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==}
     dev: true
 
+  /quick-lru/5.1.1:
+    resolution: {integrity: sha512-WuyALRjWPDGtt/wzJiadO5AXY+8hZ80hVpe6MyivgraREW751X3SbhRvG3eLKOYN+8VEvqLcf3wdnt44Z4S4SA==}
+    engines: {node: '>=10'}
+    dev: true
+
   /randombytes/2.1.0:
     resolution: {integrity: sha512-vYl3iOX+4CKUWuxGi9Ukhie6fsqXqS9FE2Zaic4tNFD2N2QQaXOMFbuKK4QmDHC0JO6B1Zp41J0LpT0oR68amQ==}
     dependencies:
@@ -5541,6 +6434,12 @@ packages:
       http-errors: 2.0.0
       iconv-lite: 0.4.24
       unpipe: 1.0.0
+    dev: true
+
+  /read-cache/1.0.0:
+    resolution: {integrity: sha512-Owdv/Ft7IjOgm/i0xvNDZ1LrRANRfew4b2prF3OWMQLxLfu3bS8FVhCsrSCMK4lR56Y9ya+AThoTpDCTxCmpRA==}
+    dependencies:
+      pify: 2.3.0
     dev: true
 
   /read-package-json-fast/3.0.2:
@@ -5668,7 +6567,7 @@ packages:
       adjust-sourcemap-loader: 4.0.0
       convert-source-map: 1.9.0
       loader-utils: 2.0.4
-      postcss: 8.4.21
+      postcss: 8.4.22
       source-map: 0.6.1
     dev: true
 
@@ -5758,6 +6657,10 @@ packages:
   /safer-buffer/2.1.2:
     resolution: {integrity: sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==}
     dev: true
+
+  /safevalues/0.3.4:
+    resolution: {integrity: sha512-LRneZZRXNgjzwG4bDQdOTSbze3fHm1EAKN/8bePxnlEZiBmkYEDggaHbuvHI9/hoqHbGfsEA7tWS9GhYHZBBsw==}
+    dev: false
 
   /sass-loader/13.2.0_sass@1.58.1+webpack@5.76.1:
     resolution: {integrity: sha512-JWEp48djQA4nbZxmgC02/Wh0eroSUutulROUusYJO9P9zltRbNN80JCBHqRGzjd4cmZCa/r88xgfkjGD0TXsHg==}
@@ -6192,6 +7095,20 @@ packages:
     engines: {node: '>=6'}
     dev: true
 
+  /sucrase/3.32.0:
+    resolution: {integrity: sha512-ydQOU34rpSyj2TGyz4D2p8rbktIOZ8QY9s+DGLvFU1i5pWJE8vkpruCjGCMHsdXwnD7JDcS+noSwM/a7zyNFDQ==}
+    engines: {node: '>=8'}
+    hasBin: true
+    dependencies:
+      '@jridgewell/gen-mapping': 0.3.3
+      commander: 4.1.1
+      glob: 7.1.6
+      lines-and-columns: 1.2.4
+      mz: 2.7.0
+      pirates: 4.0.5
+      ts-interface-checker: 0.1.13
+    dev: true
+
   /supports-color/5.5.0:
     resolution: {integrity: sha512-QjVjwdXIt408MIiAqCX4oUKsgU2EqAGzs2Ppkm4aQYbjm+ZEWEcW4SfFNTr4uMNZma0ey4f5lgLrkB0aX0QMow==}
     engines: {node: '>=4'}
@@ -6221,6 +7138,41 @@ packages:
   /symbol-observable/4.0.0:
     resolution: {integrity: sha512-b19dMThMV4HVFynSAM1++gBHAbk2Tc/osgLIBZMKsyqh34jb2e8Os7T6ZW/Bt3pJFdBTd2JwAnAAEQV7rSNvcQ==}
     engines: {node: '>=0.10'}
+    dev: true
+
+  /tailwindcss/3.3.1_postcss@8.4.22:
+    resolution: {integrity: sha512-Vkiouc41d4CEq0ujXl6oiGFQ7bA3WEhUZdTgXAhtKxSy49OmKs8rEfQmupsfF0IGW8fv2iQkp1EVUuapCFrZ9g==}
+    engines: {node: '>=12.13.0'}
+    hasBin: true
+    peerDependencies:
+      postcss: ^8.0.9
+    dependencies:
+      arg: 5.0.2
+      chokidar: 3.5.3
+      color-name: 1.1.4
+      didyoumean: 1.2.2
+      dlv: 1.1.3
+      fast-glob: 3.2.12
+      glob-parent: 6.0.2
+      is-glob: 4.0.3
+      jiti: 1.18.2
+      lilconfig: 2.1.0
+      micromatch: 4.0.5
+      normalize-path: 3.0.0
+      object-hash: 3.0.0
+      picocolors: 1.0.0
+      postcss: 8.4.22
+      postcss-import: 14.1.0_postcss@8.4.22
+      postcss-js: 4.0.1_postcss@8.4.22
+      postcss-load-config: 3.1.4_postcss@8.4.22
+      postcss-nested: 6.0.0_postcss@8.4.22
+      postcss-selector-parser: 6.0.11
+      postcss-value-parser: 4.2.0
+      quick-lru: 5.1.1
+      resolve: 1.22.2
+      sucrase: 3.32.0
+    transitivePeerDependencies:
+      - ts-node
     dev: true
 
   /tapable/2.2.1:
@@ -6300,6 +7252,19 @@ packages:
     resolution: {integrity: sha512-N+8UisAXDGk8PFXP4HAzVR9nbfmVJ3zYLAWiTIoqC5v5isinhr+r5uaO8+7r3BMfuNIufIsA7RdpVgacC2cSpw==}
     dev: true
 
+  /thenify-all/1.6.0:
+    resolution: {integrity: sha512-RNxQH/qI8/t3thXJDwcstUO4zeqo64+Uy/+sNVRBx4Xn2OX+OZ9oP+iJnNFqplFra2ZUVeKCSa2oVWi3T4uVmA==}
+    engines: {node: '>=0.8'}
+    dependencies:
+      thenify: 3.3.1
+    dev: true
+
+  /thenify/3.3.1:
+    resolution: {integrity: sha512-RVZSIV5IG10Hk3enotrhvz0T9em6cyHBLkH/YAZuKqd8hRkKhSfCGIcP2KUY0EPxndzANBmNllzWPwak+bheSw==}
+    dependencies:
+      any-promise: 1.3.0
+    dev: true
+
   /through/2.3.8:
     resolution: {integrity: sha512-w89qg7PI8wAdvX60bMDP+bFoD5Dvhm9oLheFp5O4a2QF0cSBGsBX4qZmadPMvVqlLJBBci+WqGGOAPvcDeNSVg==}
     dev: true
@@ -6342,6 +7307,10 @@ packages:
   /tree-kill/1.2.2:
     resolution: {integrity: sha512-L0Orpi8qGpRG//Nd+H90vFB+3iHnue1zSSGmNOOCh1GLJ7rUKVwV2HvijphGQS2UmhUZewS9VgvxYIdgr+fG1A==}
     hasBin: true
+    dev: true
+
+  /ts-interface-checker/0.1.13:
+    resolution: {integrity: sha512-Y/arvbn+rrz3JCKl9C4kVNfTfSm2/mEp5FSz5EsZSANGPSlQrpRI5M4PKF+mJnE52jOO90PnPSc3Ur3bTQw0gA==}
     dev: true
 
   /tslib/1.14.1:

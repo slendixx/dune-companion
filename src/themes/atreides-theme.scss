@@ -1,0 +1,17 @@
+/* You can add global styles to this file, and also import other style files */
+@import '@angular/material/theming';
+@include mat-core();
+
+$dune-primary: mat-palette($mat-green, 500);
+$dune-accent: mat-palette($mat-green, A700);
+//use default warning color
+//$dune-warn: mat-palette($mat-red, 500);
+
+$atreides-theme-dark: mat-dark-theme($dune-primary,$dune-accent);
+
+//@include angular-material-theme($emperor-theme-dark);
+.atreides-theme-dark {
+  @include angular-material-theme($atreides-theme-dark);
+  background: #222222;
+  color: #ffffff;
+}

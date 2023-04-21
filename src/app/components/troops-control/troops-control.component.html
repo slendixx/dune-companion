@@ -1,0 +1,17 @@
+<div class="flex flex-col items-center">
+  <app-circle-icon [iconSrc]="iconSrc"></app-circle-icon>
+  <div>
+        <button
+          mat-icon-button color="primary"
+          (click)="handleRemove()"
+        >
+            <mat-icon>remove</mat-icon>
+        </button>
+        <button
+          mat-icon-button color="primary"
+          (click)="handleAdd()"
+        >
+            <mat-icon>add</mat-icon>
+        </button>
+    </div>
+</div>

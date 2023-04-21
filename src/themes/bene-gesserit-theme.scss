@@ -1,0 +1,16 @@
+/* You can add global styles to this file, and also import other style files */
+@import '@angular/material/theming';
+@include mat-core();
+
+$dune-primary: mat-palette($mat-blue, 800);
+$dune-accent: mat-palette($mat-blue, A400);
+//$dune-warn: mat-palette($mat-red, 500);
+
+$bene-gesserit-them-dark: mat-dark-theme($dune-primary,$dune-accent);
+
+//@include angular-material-theme($emperor-theme-dark);
+.bene-gesserit-theme-dark {
+  @include angular-material-theme($bene-gesserit-them-dark);
+  background: #222222;
+  color: #ffffff;
+}

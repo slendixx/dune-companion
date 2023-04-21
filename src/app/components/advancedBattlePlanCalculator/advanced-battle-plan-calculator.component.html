@@ -1,0 +1,59 @@
+<main class="max-w-sm w-full p-2">
+    <h1>Calculadora de plan de batalla avanzado</h1>
+      <app-combat-wheel [combatWheelDial]="combatWheelDial"/>
+  <div class="mt-2">
+    <h2 class="mt-2">Tropas Invertidas</h2>
+  </div>
+  <div class="max-w-sm w-full flex flex-row p-4 justify-evenly">
+    <app-troops-control
+      (add)="handleAddSpecialTroop()"
+      (remove)="handleRemoveSpecialTroop()"
+      *ngIf="faction.hasSpecialTroops"
+      [iconSrc]="faction.specialTroopIconSrc"
+    />
+    <app-troops-control
+      [iconSrc]="faction.troopIconSrc"
+      (add)="handleAddTroop()"
+      (remove)="handleRemoveTroop()"
+    />
+  </div>
+  <table class="max-w-sm w-full table-fixed table">
+    <thead>
+    <td
+      class="text-center font-medium text-lg pb-4"
+    >
+      Tropas que morirán
+    </td>
+    <td class="text-center font-medium text-lg pb-4 ">Poder</td>
+    <td class="text-center font-medium text-lg pb-4 ">Especia</td>
+    </thead>
+    <tbody>
+      <tr
+        *ngFor="let troop of troops; let i = index"
+        class=""
+      >
+        <td class="flex flex-row justify-center">
+          <app-circle-icon
+            [iconSrc]="faction.hasSpecialTroops && troop.isSpecialTroop ? faction.specialTroopIconSrc : faction.troopIconSrc"
+          />
+        </td>
+        <td class="text-center font-bold text-2xl">
+          {{calculateTroopPower(troop) | fraction }}
+        </td>
+
+        <td class="flex flex-row justify-center" [class.grayscale]="!troop.hasSpiceSupport && faction.troopsRequireSpiceSupport">
+          <app-circle-icon
+            *ngIf="faction.troopsRequireSpiceSupport"
+            (click)="handleToggleSpiceSupport(i)"
+            [iconSrc]="'/assets/images/spice.svg'"
+          />
+          <app-circle-icon
+            *ngIf="!faction.troopsRequireSpiceSupport"
+            (click)="handleToggleSpiceSupport(i)"
+            [iconSrc]="'/assets/images/crossed-out-spice.svg'"
+          />
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</main>
