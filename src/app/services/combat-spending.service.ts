@@ -1,32 +1,40 @@
 import {Injectable} from '@angular/core';
 import {BehaviorSubject, Observable} from "rxjs";
 import {CommitedTroop} from "../components/classes/commited-troop";
+import {FactionService} from "./faction.service";
+import {Faction} from "../interfaces/faction";
 
 @Injectable({
   providedIn: 'root'
 })
 export class CombatSpendingService {
 
-  troops: CommitedTroop[] = [];
-  spiceSpent: number = 0;
+  private troops: CommitedTroop[] = [];
+  private faction!: Faction;
+  private spiceSpent: number = 0;
   private commitedTroops$: BehaviorSubject<CommitedTroop[]> = new BehaviorSubject<CommitedTroop[]>([]);
   private spiceSpent$: BehaviorSubject<number> = new BehaviorSubject<number>(0);
   private commitedTroopAmount$: BehaviorSubject<number> = new BehaviorSubject<number>(0);
   private commitedSpecialTroopAmount$: BehaviorSubject<number> = new BehaviorSubject<number>(0);
   private totalCommitedTroopAmount$: BehaviorSubject<number> = new BehaviorSubject<number>(0);
 
-  constructor() {
+  constructor(
+    private factionService: FactionService
+  ) {
+    factionService.getFaction().subscribe(
+      value => this.faction = value
+    )
   }
 
   getCommitedTroops(): Observable<CommitedTroop[]> {
     return this.commitedTroops$.asObservable();
   }
 
-  updateCommitedTroops() {
-    this.commitedTroops$.next(this.troops);
-  }
 
   addTroop() {
+    if (this.calculateTroopTypeAmount() >= this.faction.maxTroopAmount)
+      return;
+
     this.troops.unshift(new CommitedTroop(
       false,
       false,
@@ -49,6 +57,9 @@ export class CombatSpendingService {
   }
 
   addSpecialTroop() {
+    if (this.calculateTroopTypeAmount(true) >= this.faction.maxSpecialTroopAmount)
+      return;
+
     this.troops.push(new CommitedTroop(
       false,
       true,
@@ -96,10 +107,10 @@ export class CombatSpendingService {
 
   //clear spice
   updateCommitedTroopAmounts() {
-    const commitedTroopAmount = this.calculateCommitedTroops();
+    const commitedTroopAmount = this.calculateTroopTypeAmount();
     this.commitedTroopAmount$.next(commitedTroopAmount);
 
-    const commitedSpecialTroopAmount = this.calculateCommitedSpecialTroops();
+    const commitedSpecialTroopAmount = this.calculateTroopTypeAmount(true)
     this.commitedSpecialTroopAmount$.next(commitedSpecialTroopAmount);
 
     this.totalCommitedTroopAmount$.next(commitedTroopAmount + commitedSpecialTroopAmount);
@@ -117,18 +128,6 @@ export class CombatSpendingService {
     return this.totalCommitedTroopAmount$.asObservable();
   }
 
-  calculateCommitedTroops() {
-    return this.troops
-      .filter(troop => !troop.isSpecialTroop)
-      .length;
-
-  }
-
-  calculateCommitedSpecialTroops() {
-    return this.troops
-      .filter(troop => troop.isSpecialTroop)
-      .length;
-  }
 
   clear() {
     this.troops = [];
@@ -138,13 +137,21 @@ export class CombatSpendingService {
     this.updateCommitedTroops();
   }
 
-  //private methods
-  //update troops
   //update spice spent
 
   private updateSpiceSpent() {
     this.spiceSpent = this.calculateSpiceSpent();
     this.spiceSpent$.next(this.spiceSpent);
+  }
+
+  private updateCommitedTroops() {
+    this.commitedTroops$.next(this.troops);
+  }
+
+  private calculateTroopTypeAmount(isSpecial: boolean = false) {
+    return this.troops.filter(
+      troop => troop.isSpecialTroop === isSpecial
+    ).length;
   }
 
 }
