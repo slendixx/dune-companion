@@ -20,12 +20,12 @@ export class ThemesService {
     {
       name:'Fremen',
       CSSThemeClass:'fremen-theme-dark',
-      factionLogoSrc: '/assets/images/emperor-logo.svg'
+      factionLogoSrc: '/assets/images/fremen-logo.svg'
     },
     {
       name:'Emperor',
       CSSThemeClass:'emperor-theme-dark',
-      factionLogoSrc: '/assets/images/fremen-logo.svg'
+      factionLogoSrc: '/assets/images/emperor-logo.svg'
     },
     {
       name:'Guild',

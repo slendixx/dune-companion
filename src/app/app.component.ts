@@ -29,33 +29,7 @@ export class AppComponent implements OnInit{
     public overlayContainer: OverlayContainer,
     public themesService:ThemesService,
     private factionService:FactionService,
-    // private matIconRegistry:MatIconRegistry,
-    // private domSanitizer: DomSanitizer
   ) {
-    // this.matIconRegistry.addSvgIcon(
-    //   `Atreides`,
-    //   this.domSanitizer.bypassSecurityTrustResourceUrl(`/assets/images/atreides-logo.svg`)
-    // );
-    // this.matIconRegistry.addSvgIcon(
-    //   `Harkonnen`,
-    //   this.domSanitizer.bypassSecurityTrustResourceUrl(`/assets/images/harkonnen-logo.svg`)
-    // );
-    // this.matIconRegistry.addSvgIcon(
-    //   `Emperor`,
-    //   this.domSanitizer.bypassSecurityTrustResourceUrl(`/assets/images/fremen-logo.svg`)
-    // );
-    // this.matIconRegistry.addSvgIcon(
-    //   `Fremen`,
-    //   this.domSanitizer.bypassSecurityTrustResourceUrl(`/assets/images/emperor-logo.svg`)
-    // );
-    // this.matIconRegistry.addSvgIcon(
-    //   `Guild`,
-    //   this.domSanitizer.bypassSecurityTrustResourceUrl(`/assets/images/guild-logo.svg`)
-    // );
-    // this.matIconRegistry.addSvgIcon(
-    //   `Bene-Gesserit`,
-    //   this.domSanitizer.bypassSecurityTrustResourceUrl(`/assets/images/bene-gesserit-logo.svg`)
-    // );
   }
 
   ngOnInit(): void {

@@ -21,6 +21,9 @@ export class AdvancedBattlePlanCalculator implements OnInit{
   faction!: Faction;
   troops: CalculatorTroopRow[] = [];
   combatWheelDial: number = 0;
+  spiceSpent: number = 0;
+  commitedTroops: number = 0;
+  commitedSpecialTroops: number = 0;
 
   ngOnInit(): void {
     this.faction$ = this.factionService.getFaction();
@@ -45,6 +48,7 @@ export class AdvancedBattlePlanCalculator implements OnInit{
       false,
     ));
     this.updateWheelDial();
+    this.updateCommitedTroops();
   }
   handleRemoveTroop() {
     const nonSpecialTroops = this.troops.filter(
@@ -57,6 +61,7 @@ export class AdvancedBattlePlanCalculator implements OnInit{
     this.troops = this.troops.filter((value, i) => i !==removeIndex);
 
     this.updateWheelDial();
+    this.updateCommitedTroops();
   }
   handleAddSpecialTroop() {
     this.troops.push(new CalculatorTroopRow(
@@ -66,6 +71,7 @@ export class AdvancedBattlePlanCalculator implements OnInit{
     ));
 
     this.updateWheelDial();
+    this.updateCommitedTroops();
   }
   handleRemoveSpecialTroop() {
     const nonSpecialTroops = this.troops.filter(
@@ -81,6 +87,7 @@ export class AdvancedBattlePlanCalculator implements OnInit{
     this.troops = this.troops.filter((value, i) => i !==removeIndex);
 
     this.updateWheelDial();
+    this.updateCommitedTroops();
   }
 
   updateWheelDial(){
@@ -96,6 +103,28 @@ export class AdvancedBattlePlanCalculator implements OnInit{
     else
       return troop.hasSpiceSupport ? 1 : 0.5;
   }
+  updateCommitedTroops(){
+      this.commitedTroops = this.calculateCommitedTroops();
+    this.commitedSpecialTroops = this.calculateCommitedSpecialTroops();
+  }
+  private updateSpiceSpent() {
+    this.spiceSpent = this.calculateSpiceSpent();
+  }
+  calculateCommitedTroops(){
+    return this.troops
+      .filter(troop => !troop.isSpecialTroop)
+      .length;
+  }
+  calculateCommitedSpecialTroops(){
+    return this.troops
+      .filter(troop => troop.isSpecialTroop)
+      .length;
+  }
+  calculateSpiceSpent(){
+    return this.troops
+      .filter(troop => troop.hasSpiceSupport)
+      .length;
+  }
 
   handleToggleSpiceSupport(clickedIndex: number) {
     this.troops.forEach((troop,index) => {
@@ -103,6 +132,7 @@ export class AdvancedBattlePlanCalculator implements OnInit{
         troop.hasSpiceSupport = !troop.hasSpiceSupport;
     })
     this.combatWheelDial = this.calculateBattleWheelDial();
+    this.updateSpiceSpent();
   }
   calculateBattleWheelDial():number {
     return this.troops.reduce(
@@ -110,4 +140,5 @@ export class AdvancedBattlePlanCalculator implements OnInit{
         return previousValue + this.calculateTroopPower(currentValue);
       }, 0);
   }
+
 }
