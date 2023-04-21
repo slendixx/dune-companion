@@ -7,18 +7,16 @@
     <div>
 
       <h2>Poder de las tropas invertidas</h2>
-      <p>Cada tropa invertida suma poder a tu plan de batalla. Las tropas invertidas morirán si ganás el combate.</p>
+      <p>Tropas invertidas = tropas que morirán si ganás el combate.</p>
       <p>Utilizá los botones bajo {{faction.hasSpecialTroops ? "los íconos" : "el ícono"}}
         de {{faction.hasSpecialTroops ? 'tus guerreros' : 'tu guerrero'}} para
-        agregar o quitar guerreros de la lista de guerreros invertidos. Después podes marcar a cuales de tus guerreros
+        agregar o quitar guerreros a la lista de guerreros invertidos. Después podes marcar a cuales de tus guerreros
         les proveerás especia para potenciarlos en combate.</p>
-      <p>Cuando terminés, marcá en tu disco de combate lo que se indica en el diagrama y seguí armando el resto de tu
-        plan de batalla.</p>
+      <h4>Esto es lo que tenes que marcár en tu disco de combate:</h4>
       <app-combat-wheel [combatWheelDial]="combatWheelDial"
       />
       <div class="mt-2">
       </div>
-      <!--  <h3>Agregar o quitar a las tropas invertidas</h3>-->
       <div class="w-full flex flex-row justify-evenly">
         <app-troops-control
           (add)="handleAddSpecialTroop()"
@@ -40,7 +38,15 @@
         <thead>
         <td class="text-center font-medium text-lg pb-4">Tropas Invertidas</td>
         <td class="text-center font-medium text-lg pb-4 ">Poder</td>
-        <td class="text-center font-medium text-lg pb-4 ">Especia</td>
+        <td class="text-center font-medium text-lg pb-4 ">
+          <button
+            (click)="handleToggleAllSpiceSupport()"
+            class="text-lg"
+            mat-flat-button
+          >
+            Especia
+          </button>
+        </td>
         </thead>
         <tbody>
         <tr

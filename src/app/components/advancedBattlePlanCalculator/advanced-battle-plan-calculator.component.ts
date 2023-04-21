@@ -96,4 +96,8 @@ export class AdvancedBattlePlanCalculator implements OnInit {
     this.combatSpendingService.toggleSpiceSupport(clickedIndex);
   }
 
+  handleToggleAllSpiceSupport() {
+    this.combatSpendingService.toggleAllSpiceSupport();
+  }
+
 }

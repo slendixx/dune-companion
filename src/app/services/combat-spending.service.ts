@@ -99,6 +99,23 @@ export class CombatSpendingService {
     this.updateSpiceSpent();
   }
 
+  toggleAllSpiceSupport() {
+    const everyTroopHasSpiceSupport = this.troops.every(troop => troop.hasSpiceSupport);
+
+    let hasSpiceSupport = true;
+    if (everyTroopHasSpiceSupport)
+      hasSpiceSupport = false;
+
+    this.troops = this.troops.map((troop) => {
+      return {
+        ...troop, hasSpiceSupport
+      }
+    });
+
+    this.updateCommitedTroops();
+    this.updateSpiceSpent();
+  }
+
   calculateSpiceSpent() {
     return this.troops
       .filter(troop => troop.hasSpiceSupport)
