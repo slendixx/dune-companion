@@ -8,10 +8,12 @@
 
       <h2>Poder de las tropas invertidas</h2>
       <p>Cada tropa invertida suma poder a tu plan de batalla. Las tropas invertidas morirán si ganás el combate.</p>
-      <p>Utilizá los botones bajo {{faction.hasSpecialTroops ? "los íconos" : "el ícono"}} de tus guerreros para
-        agregarlos o quitarlos a la lista de guerreros invertidos. Después podes marcar a cuales de tus guerreros les
-        proveeras especia para potenciarlos en combate.</p>
-      <p>Cuando termines, marcá en tu disco de combate lo que se indica en el diagrama.</p>
+      <p>Utilizá los botones bajo {{faction.hasSpecialTroops ? "los íconos" : "el ícono"}}
+        de {{faction.hasSpecialTroops ? 'tus guerreros' : 'tu guerrero'}} para
+        agregar o quitar guerreros de la lista de guerreros invertidos. Después podes marcar a cuales de tus guerreros
+        les proveerás especia para potenciarlos en combate.</p>
+      <p>Cuando terminés, marcá en tu disco de combate lo que se indica en el diagrama y seguí armando el resto de tu
+        plan de batalla.</p>
       <app-combat-wheel [combatWheelDial]="combatWheelDial"
       />
       <div class="mt-2">
@@ -66,7 +68,7 @@
         </tbody>
       </table>
       <mat-divider class="mb-4"/>
-      <h2>Cantidad de tropas invertidas y especia gastada</h2>
+      <h2>Cantidad de tropas invertidas {{faction.troopsRequireSpiceSupport ? 'y especia gastada' : ''}}</h2>
       <div class="flex flex-col items-center sm:flex-row sm:justify-between space-y-2">
         <table class="w-full table-fixed table ">
           <thead
@@ -117,7 +119,10 @@
           </tbody>
         </table>
         <mat-divider class="mb-4 lg:none"/>
-        <table class="w-full table-fixed table">
+        <table
+          *ngIf="faction.troopsRequireSpiceSupport"
+          class="w-full table-fixed table"
+        >
           <thead>
           <td
             class="text-center font-medium text-lg pb-4"
