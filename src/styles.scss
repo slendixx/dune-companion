@@ -2,12 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-//@import 'src/themes/emperor-theme';
-//@import 'src/themes/atreides-theme';
-//@import 'src/themes/bene-gesserit-theme';
-//@import 'src/themes/harkonnen-theme';
-//@import 'src/themes/guild-theme';
-//@import 'src/themes/fremen-theme';
+@import 'src/themes/emperor-theme';
+@import 'src/themes/atreides-theme';
+@import 'src/themes/bene-gesserit-theme';
+@import 'src/themes/harkonnen-theme';
+@import 'src/themes/guild-theme';
+@import 'src/themes/fremen-theme';
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;  }
