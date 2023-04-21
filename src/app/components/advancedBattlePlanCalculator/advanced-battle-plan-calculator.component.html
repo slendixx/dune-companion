@@ -55,12 +55,12 @@
           <app-circle-icon
             *ngIf="faction.troopsRequireSpiceSupport"
             (click)="handleToggleSpiceSupport(i)"
-            [iconSrc]="'/assets/images/spice.svg'"
+            [iconSrc]="'assets/images/spice.svg'"
           />
           <app-circle-icon
             *ngIf="!faction.troopsRequireSpiceSupport"
             (click)="handleToggleSpiceSupport(i)"
-            [iconSrc]="'/assets/images/crossed-out-spice.svg'"
+            [iconSrc]="'assets/images/crossed-out-spice.svg'"
           />
         </td>
       </tr>
