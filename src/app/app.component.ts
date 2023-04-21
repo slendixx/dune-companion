@@ -34,7 +34,7 @@ export class AppComponent implements OnInit{
 
   ngOnInit(): void {
       this.themeOptions = this.themesService.getThemes();
-      this.hostCssClass = this.themeOptions[0];
+      this.hostCssClass = this.themeOptions[0].CSSThemeClass;
     }
 
   handleThemeChange(theme:Theme) {
