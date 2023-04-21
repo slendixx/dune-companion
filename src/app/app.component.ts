@@ -3,8 +3,6 @@ import {ThemesService} from "./services/themes.service";
 import {OverlayContainer} from "@angular/cdk/overlay";
 import {FactionService} from "./services/faction.service";
 import {Theme} from "./interfaces/theme";
-import {MatIcon, MatIconRegistry} from "@angular/material/icon";
-import {DomSanitizer} from "@angular/platform-browser";
 
 @Component({
   selector: 'app-root',

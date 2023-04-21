@@ -34,13 +34,13 @@
           (click)="this.handleThemeChange(theme)"
         >
           <div
-            class="flex flex-row justify-between"
+            class="flex flex-row justify-between items-center"
           >
             {{theme.name}}
             <img
               [src]="theme.factionLogoSrc"
               alt="soldier icon"
-              class="w-10 aspect-square p-1 bg-white rounded-full"
+              class="w-10 aspect-square p-0.5 bg-gray-200 rounded-full"
             />
           </div>
         </button>

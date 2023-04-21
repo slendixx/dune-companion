@@ -1,10 +1,9 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {MatSnackBar} from "@angular/material/snack-bar";
 import {FactionService} from "../../services/faction.service";
 import {Faction} from "../../interfaces/faction";
 import {Observable} from "rxjs";
 import {CalculatorTroopRow} from "../classes/calculator-troop-row";
-import Fraction from "fraction.js";
 
 @Component({
   selector: 'app-plan-batalla-avanzado',
