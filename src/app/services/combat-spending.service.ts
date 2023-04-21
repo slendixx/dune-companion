@@ -39,8 +39,8 @@ export class CombatSpendingService {
       false,
       false,
     ));
-    this.commitedTroops$.next(this.troops);
-    this.updateCommitedTroopAmounts();
+    this.updateCommitedTroops();
+    this.updateSpiceSpent();
   }
 
   removeTroop() {
@@ -52,8 +52,8 @@ export class CombatSpendingService {
 
     const removeIndex = nonSpecialTroops.length - 1;
     this.troops = this.troops.filter((value, i) => i !== removeIndex);
-    this.commitedTroops$.next(this.troops);
-    this.updateCommitedTroopAmounts();
+    this.updateCommitedTroops();
+    this.updateSpiceSpent();
   }
 
   addSpecialTroop() {
@@ -64,8 +64,8 @@ export class CombatSpendingService {
       false,
       true,
     ));
-    this.commitedTroops$.next(this.troops);
-    this.updateCommitedTroopAmounts();
+    this.updateCommitedTroops();
+    this.updateSpiceSpent();
   }
 
   removeSpecialTroop() {
@@ -81,8 +81,8 @@ export class CombatSpendingService {
     const removeIndex = nonSpecialTroops.length + (specialTroops.length - 1);
     this.troops = this.troops.filter((value, i) => i !== removeIndex);
 
-    this.commitedTroops$.next(this.troops);
-    this.updateCommitedTroopAmounts();
+    this.updateCommitedTroops();
+    this.updateSpiceSpent();
   }
 
   getSpiceSpent() {
@@ -132,7 +132,6 @@ export class CombatSpendingService {
   clear() {
     this.troops = [];
     this.spiceSpent = 0;
-    this.updateCommitedTroopAmounts();
     this.updateSpiceSpent();
     this.updateCommitedTroops();
   }
@@ -146,6 +145,7 @@ export class CombatSpendingService {
 
   private updateCommitedTroops() {
     this.commitedTroops$.next(this.troops);
+    this.updateCommitedTroopAmounts();
   }
 
   private calculateTroopTypeAmount(isSpecial: boolean = false) {
