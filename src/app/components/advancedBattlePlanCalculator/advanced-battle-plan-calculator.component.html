@@ -24,12 +24,16 @@
           (add)="handleAddSpecialTroop()"
           (remove)="handleRemoveSpecialTroop()"
           *ngIf="faction.hasSpecialTroops"
+          [addDisabled]="commitedSpecialTroopAmount >= faction.maxSpecialTroopAmount"
           [iconSrc]="faction.specialTroopIconSrc"
+          [removeDisabled]="commitedSpecialTroopAmount === 0"
         />
         <app-troops-control
           (add)="handleAddTroop()"
           (remove)="handleRemoveTroop()"
+          [addDisabled]="commitedTroopAmount >= faction.maxTroopAmount"
           [iconSrc]="faction.troopIconSrc"
+          [removeDisabled]="commitedTroopAmount === 0"
         />
       </div>
       <table class="w-full table-fixed table mb-2">
@@ -82,7 +86,7 @@
           <td
             class="text-center font-medium text-lg pb-4"
           >
-            {{commitedTroopAmount$ | async}}
+            {{commitedTroopAmount}}
           </td>
           </thead>
           <thead
@@ -105,12 +109,12 @@
           <tbody>
           <tr *ngIf="faction.hasSpecialTroops">
             <td class="text-center text-lg">
-              {{commitedTroopAmount$ | async}}
+              {{commitedTroopAmount}}
             </td>
             <td
               class="text-center text-lg"
             >
-              {{commitedSpecialTroopAmount$ | async}}
+              {{commitedSpecialTroopAmount}}
             </td>
             <td class="text-center text-lg">
               {{totalCommitedSpecialTroopAmount$ | async}}

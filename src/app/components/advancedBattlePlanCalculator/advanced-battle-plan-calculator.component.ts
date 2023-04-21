@@ -19,7 +19,9 @@ export class AdvancedBattlePlanCalculator implements OnInit {
   troops: CommitedTroop[] = [];
   spiceSpent$!: Observable<number>;
   commitedTroopAmount$!: Observable<number>;
+  commitedTroopAmount: number = 0;
   commitedSpecialTroopAmount$!: Observable<number>;
+  commitedSpecialTroopAmount: number = 0;
   totalCommitedSpecialTroopAmount$!: Observable<number>;
   combatWheelDial$!: Observable<number>;
   combatWheelDial: number = 0;
@@ -41,7 +43,13 @@ export class AdvancedBattlePlanCalculator implements OnInit {
     this.troops$ = this.combatSpendingService.getCommitedTroops();
     this.spiceSpent$ = this.combatSpendingService.getSpiceSpent();
     this.commitedTroopAmount$ = this.combatSpendingService.getCommitedTroopAmount();
+    this.commitedTroopAmount$.subscribe(
+      value => this.commitedTroopAmount = value
+    );
     this.commitedSpecialTroopAmount$ = this.combatSpendingService.getCommitedSpecialTroopAmount();
+    this.commitedSpecialTroopAmount$.subscribe(
+      value => this.commitedSpecialTroopAmount = value
+    );
     this.totalCommitedSpecialTroopAmount$ = this.combatSpendingService.getTotalCommitedTroopAmount();
 
     this.combatWheelDialService.getCombatWheelDial().subscribe(

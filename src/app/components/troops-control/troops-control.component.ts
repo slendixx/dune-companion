@@ -6,9 +6,11 @@ import {Component, EventEmitter, Input, Output} from '@angular/core';
   styleUrls: ['./troops-control.component.scss']
 })
 export class TroopsControlComponent {
-  @Input() iconSrc!:string;
+  @Input() iconSrc!: string;
   @Output() add = new EventEmitter();
   @Output() remove = new EventEmitter();
+  @Input() removeDisabled: boolean = false;
+  @Input() addDisabled: boolean = false;
 
 
   handleAdd() {
