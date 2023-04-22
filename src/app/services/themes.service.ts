@@ -25,7 +25,7 @@ export class ThemesService {
       factionLogoSrc: 'assets/images/fremen-logo.svg'
     },
     {
-      name: 'Emperor',
+      name: 'Emperador',
       CSSThemeClass: 'emperor-theme-dark',
       factionLogoSrc: 'assets/images/emperor-logo.svg'
     },

@@ -39,7 +39,7 @@ export class FactionService {
       maxSpecialTroopAmount: 3,
     },
     {
-      name: "Emperor",
+      name: "Emperador",
       hasSpecialTroops: true,
       factionIconSrc: "assets/images/emperor-logo.svg",
       troopIconSrc: "assets/images/emperor-troops.svg",
@@ -49,7 +49,7 @@ export class FactionService {
       maxSpecialTroopAmount: 5,
     },
     {
-      name: "Guild",
+      name: "Gremio de Navegantes",
       hasSpecialTroops: false,
       factionIconSrc: "assets/images/guild-logo.svg",
       troopIconSrc: "assets/images/guild-troops.svg",
@@ -70,7 +70,7 @@ export class FactionService {
     },
   ];
 
-  private faction$: BehaviorSubject<Faction> = new BehaviorSubject<Faction>(this.factions[0]);
+  private faction$: BehaviorSubject<Faction> = new BehaviorSubject<Faction>(this.factions[1]);
 
   constructor() {
   }
