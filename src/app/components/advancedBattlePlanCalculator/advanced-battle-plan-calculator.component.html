@@ -2,17 +2,23 @@
   <h1>Calculadora de plan de batalla avanzado</h1>
   <p>Esta herramienta te ayudará a calcular el poder que tus tropas aportan a tu plan de batalla según las tropas que
     inviertas y la especia que les proveas.</p>
+
+  <p>Utilizá los botones bajo {{faction.hasSpecialTroops ? "los íconos" : "el ícono"}}
+    de {{faction.hasSpecialTroops ? 'tus guerreros' : 'tu guerrero'}} para
+    agregar o quitar guerreros a la lista de guerreros invertidos. Después podes marcar a cuales de tus guerreros
+    les proveerás especia para potenciarlos en combate.</p>
+
+  <div class="grid grid-cols-3 justify-items-center items-center text-lg font-medium mb-1">
+    <span class="text-right">Tropas invertidas</span>
+    <span class="text-center text-4xl">=</span>
+    <span class="text-left">tropas que morirán si ganás el combate</span>
+  </div>
+
+  <p>Por ultimo marcá en tu disco de combate lo que indica el disco en pantalla. Después podés seguir armando el resto
+    de tu plan de batalla.</p>
   <mat-divider/>
   <article class="w-full mx-auto flex flex-row justify-center mb-4">
     <div>
-
-      <h2>Poder de las tropas invertidas</h2>
-      <p>Tropas invertidas = tropas que morirán si ganás el combate.</p>
-      <p>Utilizá los botones bajo {{faction.hasSpecialTroops ? "los íconos" : "el ícono"}}
-        de {{faction.hasSpecialTroops ? 'tus guerreros' : 'tu guerrero'}} para
-        agregar o quitar guerreros a la lista de guerreros invertidos. Después podes marcar a cuales de tus guerreros
-        les proveerás especia para potenciarlos en combate.</p>
-      <h4>Esto es lo que tenes que marcár en tu disco de combate:</h4>
       <app-combat-wheel [combatWheelDial]="combatWheelDial"
       />
       <div class="mt-2">
@@ -78,7 +84,7 @@
         </tbody>
       </table>
       <mat-divider class="mb-4"/>
-      <h2>Cantidad de tropas invertidas {{faction.troopsRequireSpiceSupport ? 'y especia gastada' : ''}}</h2>
+      <h2>Cantidades</h2>
       <div class="flex flex-col items-center sm:flex-row sm:justify-between space-y-2">
         <table class="w-full table-fixed table ">
           <thead
