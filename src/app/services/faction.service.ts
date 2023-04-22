@@ -80,6 +80,7 @@ export class FactionService {
   }
 
   setFaction(factionName: string) {
+
     const faction = this.factions.find(
       (faction) => faction.name === factionName
     )

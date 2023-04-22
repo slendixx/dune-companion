@@ -1,14 +1,14 @@
-<div style="background: inherit; height: 100%" >
+<div style="background: inherit; height: 100%">
   <mat-toolbar
-    color="primary"
     class="flex flex-row justify-between shadow-2xl"
+    color="primary"
   >
-    <button mat-button [routerLink]="''" (click)="handleMenuClosed()">
+    <button (click)="handleMenuClosed()" [routerLink]="''" mat-button>
       Dune Companion
     </button>
     <button
-      mat-icon-button
       (click)="menu.toggle()"
+      mat-icon-button
     >
       <mat-icon>menu</mat-icon>
     </button>
@@ -16,12 +16,12 @@
   <mat-drawer-container class="h-full">
     <mat-drawer
       #menu
+      (closed)="handleMenuClosed()"
+      (opened)="handleMenuOpened()"
+      [(opened)]="menuOpened"
+      class="max-w-[280px]"
       mode="over"
       position="end"
-      [(opened)]="menuOpened"
-      (opened)="handleMenuOpened()"
-      (closed)="handleMenuClosed()"
-      class="max-w-[280px]"
     >
       <mat-action-list>
         <p
@@ -30,17 +30,17 @@
           Facciones
         </p>
         <button
-          mat-list-item
-          *ngFor="let theme of themeOptions"
           (click)="this.handleThemeChange(theme)"
+          *ngFor="let theme of themeOptions"
+          mat-list-item
         >
           <div
             class="flex flex-row justify-between items-center"
           >
             {{theme.name}}
             <img
+              [alt]="theme.name + ' faction shield'"
               [src]="theme.factionLogoSrc"
-              alt="soldier icon"
               class="w-10 aspect-square p-0.5 bg-gray-200 rounded-full"
             />
           </div>
@@ -52,10 +52,10 @@
           Herramientas
         </p>
         <button
-          mat-list-item
+          (click)="handleMenuClosed()"
           *ngFor="let option of navOptions"
           [routerLink]="option.href"
-          (click)="handleMenuClosed()"
+          mat-list-item
         >
           {{option.label}}
         </button>

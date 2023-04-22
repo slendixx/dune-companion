@@ -1,45 +1,63 @@
-import { Injectable} from '@angular/core';
+import {Injectable} from '@angular/core';
 import {Theme} from "../interfaces/theme";
+import {BehaviorSubject, Observable} from "rxjs";
+import {CombatSpendingService} from "./combat-spending.service";
 
 @Injectable({
   providedIn: 'root'
 })
 export class ThemesService {
 
-  private themes:Theme[] = [
+  private themes: Theme[] = [
     {
-      name:'Atreides',
-      CSSThemeClass:'atreides-theme-dark',
+      name: 'Atreides',
+      CSSThemeClass: 'atreides-theme-dark',
       factionLogoSrc: 'assets/images/atreides-logo.svg'
     },
     {
-      name:'Harkonnen',
-      CSSThemeClass:'harkonnen-theme-dark',
+      name: 'Harkonnen',
+      CSSThemeClass: 'harkonnen-theme-dark',
       factionLogoSrc: 'assets/images/harkonnen-logo.svg'
     },
     {
-      name:'Fremen',
-      CSSThemeClass:'fremen-theme-dark',
+      name: 'Fremen',
+      CSSThemeClass: 'fremen-theme-dark',
       factionLogoSrc: 'assets/images/fremen-logo.svg'
     },
     {
-      name:'Emperor',
-      CSSThemeClass:'emperor-theme-dark',
+      name: 'Emperor',
+      CSSThemeClass: 'emperor-theme-dark',
       factionLogoSrc: 'assets/images/emperor-logo.svg'
     },
     {
-      name:'Guild',
-      CSSThemeClass:'guild-theme-dark',
+      name: 'Gremio de Navegantes',
+      CSSThemeClass: 'guild-theme-dark',
       factionLogoSrc: 'assets/images/guild-logo.svg'
     },
     {
-      name:'Bene-Gesserit',
-      CSSThemeClass:'bene-gesserit-theme-dark',
+      name: 'Bene-Gesserit',
+      CSSThemeClass: 'bene-gesserit-theme-dark',
       factionLogoSrc: 'assets/images/bene-gesserit-logo.svg'
     },
   ]
-  getThemes(){
+  private currentTheme$: BehaviorSubject<Theme> = new BehaviorSubject<Theme>(this.themes[0]);
+
+  constructor(
+    private combatSpendingService: CombatSpendingService,
+  ) {
+  }
+
+  getThemes() {
     return this.themes;
+  }
+
+  getCurrentTheme(): Observable<Theme> {
+    return this.currentTheme$.asObservable();
+  }
+
+  setCurrentTheme(theme: Theme) {
+    this.combatSpendingService.clear();
+    this.currentTheme$.next(theme);
   }
 
 }

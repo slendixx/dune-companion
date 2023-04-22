@@ -1,13 +1,41 @@
 <main class="max-w-sm w-full p-2 mx-auto sm:max-w-xl">
   <h1>Bienvenidos a Dune Companion</h1>
-  <p>Es esta App encontrarán todo lo necesario para tener la experiencia de Dune definitiva
+  <p>Es esta App encontrarán todo lo necesario para tener la experiencia Dune definitiva
   </p>
-  <h2>¡Empecemos!</h2>
+  <p>¡Empecemos!</p>
 
-  <p>
-    Para empezar abrí el menú en la esquina superior derecha y seleccioná tu facción.
-  </p>
-  <p>Una vez que hayas seleccionado tu facción explorá alguna de las opciones del mismo menú.</p>
-  <p>Recordá que podés seleccionar una nueva facción en cualquier momento.</p>
+  <h2>Seleccioná tu Facción</h2>
+  <section class="grid grid-cols-2 justify-items-center gap-y-4 sm:grid-cols-3 mb-4">
+    <button
+      (click)="this.handleThemeChange(theme)"
+      *ngFor="let theme of themeOptions"
+      class="flex flex-col items-center font-medium text-lg"
+    >
+      <img
+        [alt]="theme.name + ' faction shield'"
+        [src]="theme.factionLogoSrc"
+        class="w-28 aspect-square p-0.5 bg-gray-200 rounded-full"
+      />
+      {{theme.name}}
+    </button>
+  </section>
+  <p>Podés cambiar tu facción en cualquier momento desde el menú en la esquina superior derecha.</p>
+  <h2>Explorá las Herramientas</h2>
+  <section class="grid grid-cols-2 justify-items-center gap-y-4 sm:grid-cols-3">
+    <button routerLink="advanced-battle-plan-calculator">
+      <mat-card>
+        <mat-card-header>
+          {{"Calculadora de plan de batalla avanzado" | uppercase}}
+        </mat-card-header>
+        <div class="my-2">
+          <mat-divider/>
+        </div>
+        <mat-card-content>
+          Aprendé a marcar las tropas invertidas en tu blan de batalla
+        </mat-card-content>
+      </mat-card>
+    </button>
+  </section>
+
 </main>
 

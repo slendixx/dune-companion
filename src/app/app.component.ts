@@ -3,7 +3,6 @@ import {ThemesService} from "./services/themes.service";
 import {OverlayContainer} from "@angular/cdk/overlay";
 import {FactionService} from "./services/faction.service";
 import {Theme} from "./interfaces/theme";
-import {CombatSpendingService} from "./services/combat-spending.service";
 
 @Component({
   selector: 'app-root',
@@ -30,23 +29,27 @@ export class AppComponent implements OnInit {
     public overlayContainer: OverlayContainer,
     public themesService: ThemesService,
     private factionService: FactionService,
-    private combatSpendingService: CombatSpendingService,
   ) {
   }
 
   ngOnInit(): void {
     this.themeOptions = this.themesService.getThemes();
-    this.hostCssClass = this.themeOptions[0].CSSThemeClass;
+    // this.hostCssClass = this.themeOptions[0].CSSThemeClass;
+    this.themesService.getCurrentTheme().subscribe(
+      theme => {
+        this.hostCssClass = theme.CSSThemeClass
+        this.overlayContainer.getContainerElement().classList.add(theme.CSSThemeClass);
+      }
+    )
   }
 
   handleThemeChange(theme: Theme) {
-    this.overlayContainer.getContainerElement().classList.add(theme.CSSThemeClass);
-    this.hostCssClass = theme.CSSThemeClass;
+    //select theme globally
+    this.themesService.setCurrentTheme(theme);
     //select faction globally
     this.factionService.setFaction(theme.name);
     //close the drawer menu
     this.handleMenuClosed();
-    this.combatSpendingService.clear();
   }
 
 
