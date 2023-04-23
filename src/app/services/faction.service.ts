@@ -70,7 +70,7 @@ export class FactionService {
     },
   ];
 
-  private faction$: BehaviorSubject<Faction> = new BehaviorSubject<Faction>(this.factions[1]);
+  private faction$: BehaviorSubject<Faction> = new BehaviorSubject<Faction>(this.factions[0]);
 
   constructor() {
   }

@@ -27,6 +27,14 @@ import {CombatWheelComponent} from './components/combat-wheel/combat-wheel.compo
 import {HomeComponent} from './components/home/home.component';
 import {CombatSpendingService} from "./services/combat-spending.service";
 import {MatCardModule} from "@angular/material/card";
+import {FactionInfoComponent} from './components/faction-info/faction-info.component';
+import {AtreidesInfoComponent} from './components/faction-info/atreides-info/atreides-info.component';
+import {HarkonnenInfoComponent} from "./components/faction-info/harkonnen-info/harkonnen-info.component";
+import {FremenInfoComponent} from "./components/faction-info/fremen-info/fremen-info.component";
+import {BeneGesseritInfoComponent} from "./components/faction-info/bene-gesserit-info/bene-gesserit-info.component";
+import {GuildInfoComponent} from "./components/faction-info/guild-info/guild-info.component";
+import {EmperorInfoComponent} from "./components/faction-info/emperor-info/emperor-info.component";
+
 
 @NgModule({
   declarations: [
@@ -39,6 +47,13 @@ import {MatCardModule} from "@angular/material/card";
     CombatWheelDialPipe,
     CombatWheelComponent,
     HomeComponent,
+    FactionInfoComponent,
+    AtreidesInfoComponent,
+    HarkonnenInfoComponent,
+    FremenInfoComponent,
+    BeneGesseritInfoComponent,
+    GuildInfoComponent,
+    EmperorInfoComponent,
   ],
   imports: [
     BrowserModule,

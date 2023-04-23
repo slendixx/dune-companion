@@ -18,10 +18,10 @@ export class AppComponent implements OnInit {
       label: 'Calculadora de Plan de Batalla Avanzado',
       href: 'advanced-battle-plan-calculator',
     },
-    // {
-    //   label: 'Información de Facción',
-    //   href: 'faction-info',
-    // },
+    {
+      label: 'Información de Facción',
+      href: 'faction-info',
+    },
   ]
   themeOptions: Theme[] = [];
 
@@ -34,7 +34,6 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.themeOptions = this.themesService.getThemes();
-    // this.hostCssClass = this.themeOptions[0].CSSThemeClass;
     this.themesService.getCurrentTheme().subscribe(
       theme => {
         this.hostCssClass = theme.CSSThemeClass

@@ -9,6 +9,15 @@
 @import 'src/themes/guild-theme';
 @import 'src/themes/fremen-theme';
 
+:root {
+  --primary-atreides: #4CAF50;
+  --primary-harkonnen: #673AB7;
+  --primary-emperor: #C62828;
+  --primary-fremen: #FFC107;
+  --primary-guild: #FF9800;
+  --primary-bene-gesserit: #1565C0;
+}
+
 html, body {
   height: 100%;
 }

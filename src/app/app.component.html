@@ -3,9 +3,12 @@
     class="flex flex-row justify-between shadow-2xl"
     color="primary"
   >
-    <button (click)="handleMenuClosed()" [routerLink]="''" mat-button>
-      Dune Companion
-    </button>
+    <span>
+      <button (click)="handleMenuClosed()" [routerLink]="''" class="text-lg" mat-button>
+        Dune Companion
+      </button>
+      <span class="text-sm">V 0.2.0</span>
+    </span>
     <button
       (click)="menu.toggle()"
       mat-icon-button
@@ -30,7 +33,7 @@
           Facciones
         </p>
         <button
-          (click)="this.handleThemeChange(theme)"
+          (click)="handleThemeChange(theme)"
           *ngFor="let theme of themeOptions"
           mat-list-item
         >
@@ -45,12 +48,14 @@
             />
           </div>
         </button>
-        <mat-divider></mat-divider>
-        <p
-          class="w-full p-4 pb-2 text-left text-lg font-semibold"
-        >
-          Herramientas
-        </p>
+        <div class="my-4">
+          <mat-divider/>
+        </div>
+        <!--        <p-->
+        <!--          class="w-full p-4 pb-2 text-left text-lg font-semibold"-->
+        <!--        >-->
+        <!--          Herramientas-->
+        <!--        </p>-->
         <button
           (click)="handleMenuClosed()"
           *ngFor="let option of navOptions"

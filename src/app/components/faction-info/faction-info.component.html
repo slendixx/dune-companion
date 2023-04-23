@@ -1,0 +1,34 @@
+<main class="max-w-sm w-full p-2 mx-auto sm:max-w-xl h-full">
+  <h1>Información de Facción</h1>
+  <p>En esta sección vas a encontrarás toda la información que necesites sobre las facciones del juego.</p>
+  <div class="mb-4">
+    <mat-divider/>
+  </div>
+
+  <div [ngSwitch]="(faction$ | async)?.name">
+    <app-atreides-info
+      *ngSwitchCase="'Atreides'"
+      [faction]="(faction$ | async)"
+    />
+    <app-harkonnen-info
+      *ngSwitchCase="'Harkonnen'"
+      [faction]="(faction$ | async)"
+    />
+    <app-fremen-info
+      *ngSwitchCase="'Fremen'"
+      [faction]="(faction$ | async)"
+    />
+    <app-bene-gesserit-info
+      *ngSwitchCase="'Bene-Gesserit'"
+      [faction]="(faction$ | async)"
+    />
+    <app-guild-info
+      *ngSwitchCase="'Gremio de Navegantes'"
+      [faction]="(faction$ | async)"
+    />
+    <app-emperor-info
+      *ngSwitchCase="'Emperador'"
+      [faction]="(faction$ | async)"
+    />
+  </div>
+</main>
