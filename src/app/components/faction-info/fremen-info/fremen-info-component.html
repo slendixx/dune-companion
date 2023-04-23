@@ -32,6 +32,42 @@
     <b>Reanimación gratuita:</b>
     3 tropas por ronda (no puedes pagar por reanimaciones adicionales).
   </p>
+
+  <h2
+    class="bg-[--primary-fremen] px-4 text-center uppercase text-black w-fit"
+  >
+    Líderes
+  </h2>
+  <table
+    class="w-full table-fixed table text-center mb-3"
+  >
+    <thead>
+    <td
+      class="text-center font-medium text-lg pb-4"
+    >
+      Líder
+    </td>
+    <td
+      class="text-center font-medium text-lg pb-4"
+    >
+      Fuerza de Batalla
+    </td>
+    </thead>
+    <tbody>
+    <tr
+      *ngFor="let leader of faction?.leaders"
+    >
+      <td>
+        {{leader.name}}
+      </td>
+      <td
+        class="text-center text-lg"
+      >
+        {{leader.power}}
+      </td>
+    </tr>
+    </tbody>
+  </table>
   <h2
     class="bg-[--primary-fremen] px-4 text-center uppercase text-black w-fit"
   >

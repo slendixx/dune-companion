@@ -1,3 +1,5 @@
+import {Leader} from "./leader";
+
 export interface Faction {
   hasSpecialTroops: boolean;
   name: string;
@@ -7,4 +9,5 @@ export interface Faction {
   troopsRequireSpiceSupport: boolean;
   maxTroopAmount: number;
   maxSpecialTroopAmount: number;
+  leaders: Leader[];
 }
